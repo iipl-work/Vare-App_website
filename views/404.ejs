@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Vare APP 404</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <%- include("partials/icon") %>
+
+    <!-- ************************* CSS Files ************************* -->
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="/assets/css/vendor.css" />
+
+    <!-- style css -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+
+  <body>
+    <!-- Preloader Start -->
+    <div class="zakas-preloader active">
+      <div
+        class="
+          zakas-preloader-inner
+          h-100
+          d-flex
+          align-items-center
+          justify-content-center
+        "
+      >
+        <div class="zakas-child zakas-bounce1"></div>
+        <div class="zakas-child zakas-bounce2"></div>
+        <div class="zakas-child zuka-bounce3"></div>
+      </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+      <%- include("partials/header2") %>
+
+      <!-- Main Wrapper Start -->
+      <div class="main-content-wrapper">
+        <div class="error-area pt--90 pb--100">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-7 col-lg-8 text-center">
+                <div class="error">
+                  <h1>404</h1>
+                  <h2>OPPS! PAGE NOT BE FOUND</h2>
+                  <p>
+                    Sorry but the page you are looking for does not exist, have
+                    been removed, name changed or is temporarily unavailable.
+                  </p>
+                  <form action="#" class="searchform-2 mb--60">
+                    <input
+                      type="text"
+                      name="search"
+                      id="error_search"
+                      placeholder="Search..."
+                      class="searchform-2__input"
+                    />
+                    <button type="submit" class="searchform-2__submit">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </form>
+                  <a href="/" class="btn btn-bg-red btn-color-white btn-hover-2"
+                    >Back to home page</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main Wrapper End -->
+
+      <%- include("partials/footer") %>
+
+      <!-- Searchform Popup Start -->
+      <div class="searchform__popup" id="searchForm">
+        <a href="#" class="btn-close"
+          ><i class="flaticon flaticon-cross"></i
+        ></a>
+        <div class="searchform__body">
+          <p>Start typing and press Enter to search</p>
+          <form class="searchform">
+            <input
+              type="text"
+              name="popup-search"
+              id="popup-search"
+              class="searchform__input"
+              placeholder="Search Entire Store..."
+            />
+            <button type="submit" class="searchform__submit">
+              <i class="flaticon flaticon-magnifying-glass-icon"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Searchform Popup End -->
+
+      <!-- Global Overlay Start -->
+      <div class="zakas-global-overlay"></div>
+      <!-- Global Overlay End -->
+    </div>
+    <!-- Main Wrapper End -->
+
+    <!-- ************************* JS Files ************************* -->
+
+    <!-- jQuery JS -->
+    <script src="/assets/js/vendor.js"></script>
+
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
