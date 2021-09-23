@@ -65,7 +65,4 @@ app.get('/blog', (req, res) => {
 app.get('/singlepostimage', (req, res) => {
   res.render('single-post-image', {foo: 'FOO'});
 });
-app.get('/compare', (req, res) => {
-  res.render('compare', {foo: 'FOO'});
-});
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
