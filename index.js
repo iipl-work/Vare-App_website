@@ -1,16 +1,42 @@
 let express = require('express');
 let app = express();
 var path = require('path');
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb+srv://sowmya:iNNrxOhVfEdvsUaI@vare.cnw2n.mongodb.net/vare?retryWrites=true&w=majority";
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public'))); 
 app.get('/', (req, res) => {
   res.render('newindex', {foo: 'FOO'});
 });
 app.get('/shopnow', (req, res) => {
-  res.render('listingpage', {foo: 'FOO'});
+
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("vare");
+  dbo.collection("products").find({}).toArray(function(err, result) {
+    if (err) throw err;
+   // console.log(result);
+    db.close();
+    res.render('listingpage', {"data":result});
+
+  });
 });
-app.get('/shopproduct', (req, res) => {
-  res.render('product-details-affiliate', {foo: 'FOO'});
+ 
+});
+
+app.get('/shopproduct/:id', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("vare");
+    dbo.collection("products").findOne({"productId":req.params.id}, function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      db.close();
+      res.render('product-details-affiliate', result);
+    });
+  });
+  
 });
 app.get('/contact', (req, res) => {
   res.render('contact-us', {foo: 'FOO'});
