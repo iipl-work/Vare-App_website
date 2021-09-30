@@ -92,8 +92,8 @@
                         >
                           <figure class="product-gallery__image zoom">
                             <img
-                              height="500px"
-                              src="/assets/img/products/fashion-model-woman-colorful-summer-outfit-makeup-PQW4D24.jpg"
+                              
+                              src="<%= image_url[0] %>"
                               alt="Product"
                             />
                             <div class="product-gallery__actions">
@@ -109,8 +109,8 @@
                           </figure>
                           <figure class="product-gallery__image zoom">
                             <img
-                              height="500px"
-                              src="/assets/img/products/glamour-fashion-model-K4GT4V5.JPG"
+                              
+                              src="/<%= image_url[0] %>"
                               alt="Product"
                             />
                             <div class="product-gallery__actions">
@@ -335,17 +335,7 @@
                     >
                       <span>Additional Information</span>
                     </button>
-                    <button
-                      type="button"
-                      class="product-data-tab__link nav-link"
-                      id="nav-reviews-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#nav-reviews"
-                      role="tab"
-                      aria-selected="true"
-                    >
-                      <span>Reviews(1)</span>
-                    </button>
+                    
                   </div>
                   <div
                     class="tab-content product-data-tab__content"
@@ -430,11 +420,11 @@
                             <tr>
                               <th>Color</th>
                               <td>
-                                <a href="shop.html">Black</a>,
-                                <a href="shop.html">Gray</a>,
-                                <a href="shop.html">Red</a>,
-                                <a href="shop.html">Violet</a>,
-                                <a href="shop.html">Yellow</a>
+                                <a href="/shopnow">Black</a>,
+                                <a href="/shopnow">Gray</a>,
+                                <a href="/shopnow">Red</a>,
+                                <a href="/shopnow">Violet</a>,
+                                <a href="/shopnow">Yellow</a>
                               </td>
                             </tr>
                           </tbody>
@@ -597,12 +587,13 @@
                             ]'
                 >
                   <div class="item">
+                    <% for(var i=0; i < data.length; i++) { %>
                     <div class="zakas-product">
                       <div class="product-inner">
                         <figure class="product-image">
-                          <a href="/shopproduct">
+                          <a href="/shopproduct/<%= data[i].productId %>">
                             <img
-                              src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
+                              src="<%= data[i].image_url[0] %>"
                               alt="Products"
                             />
                           </a>
@@ -702,6 +693,7 @@
                         </div>
                       </div>
                     </div>
+                    <% } %>
                   </div>
                   <div class="item">
                     <div class="zakas-product">
