@@ -4,22 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-   
+
     <title>Vare APP Shop Now</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%- include("partials/icon") %>
 
-    <!-- ************************* CSS Files ************************* -->
+        <!-- ************************* CSS Files ************************* -->
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="/assets/css/bootstrap.css">
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="/assets/css/vendor.css">
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="/assets/css/vendor.css">
 
-    <!-- style css -->
-    <link rel="stylesheet" href="/assets/css/main.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
 
@@ -33,360 +33,421 @@
             <div class="zakas-child zuka-bounce3"></div>
         </div>
     </div>
-   
+
     <!-- Preloader End -->
 
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header Start -->
         <%- include("partials/header2") %>
-        <!-- Header End -->
+            <!-- Header End -->
 
-        <!-- Breadcrumb area Start -->
-        <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                            <h1 class="page-title"> Vare Shop</h1>
+            <!-- Breadcrumb area Start -->
+            <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
+                                <h1 class="page-title"> Vare Shop</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Breadcrumb area End -->
+            <!-- Breadcrumb area End -->
 
-        <!-- Main Content Wrapper Start -->
-        <div  class="main-content-wrapper">
-            <div class="shop-page-wrapper ptb--80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="shop-toolbar mb--50">
-                                <div class="row align-items-center">
-                                    <div class="col-md-5 mb-sm--50 mb-xs--10">
-                                        <div class="shop-toolbar__left">
-                                            <div class="product-ordering">
-                                                <select class="product-ordering__select nice-select">
-                                                    <option value="0">Default Sorting</option>
-                                                    <option value="1">Relevance</option>
-                                                    <option value="2">Name, A to Z</option>
-                                                    <option value="3">Name, Z to A</option>
-                                                    <option value="4">Price, low to high</option>
-                                                    <option value="5">Price, high to low</option>
-                                                </select>
+            <!-- Main Content Wrapper Start -->
+            <div class="main-content-wrapper">
+                <div class="shop-page-wrapper ptb--80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="shop-toolbar mb--50">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-5 mb-sm--50 mb-xs--10">
+                                            <div class="shop-toolbar__left">
+                                                <div class="product-ordering">
+                                                    <select class="product-ordering__select nice-select">
+                                                        <option value="0">Default Sorting</option>
+                                                        <option value="1">Relevance</option>
+                                                        <option value="2">Name, A to Z</option>
+                                                        <option value="3">Name, Z to A</option>
+                                                        <option value="4">Price, low to high</option>
+                                                        <option value="5">Price, high to low</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="shop-toolbar__right d-flex justify-content-md-end justify-content-start flex-sm-row flex-column">
-                                            <p class="product-pages">Showing Result  08 Among  72</p>
-                                            
+                                        <div class="col-md-7">
+                                            <div
+                                                class="shop-toolbar__right d-flex justify-content-md-end justify-content-start flex-sm-row flex-column">
+                                                <p class="product-pages">Showing Result 08 Among 72</p>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="shop-products">
-                                <div>
-                                    
-                                 </div>
-                                <div class="row">
-                                    <% for(var i=0; i < data.length; i++) { %>
-                                    <div class="col-xl-3 col-lg-4 col-sm-6 mb--50">
-                                        <div class="zakas-product">
-                                            <div class="product-inner">
-                                                <figure class="product-image">
-                                                    <a href="/shopproduct/<%= data[i].productId %>">
+                                <div class="shop-products">
+                                    <div>
 
-                                                        <img src="<%= data[i].image_url[0] %>" alt="Products">
-                                                    </a>
-                                                    <div class="zakas-product-action">
-                                                        <div class="product-action d-flex">
-                                                            <div class="product-size">
-                                                                <a href="" class="action-btn">
-                                                                    <span class="current"><%= data[i].brandsize %></span>
-                                                                </a>
-                                                                
-                                                            </div>
-                                                            <div class="product-color">
-                                                                <a href="" class="action-btn">
-                                                                    <span class="current abbey"></span>
-                                                                </a>
-                                                                <div class="product-color-swatch">
-                                                                    <span class="product-color-swatch-btn blue variation-btn">
-                                                                        Blue
-                                                                    </span>
-                                                                    <span class="product-color-swatch-btn copper variation-btn">
-                                                                        Copper
-                                                                    </span>
-                                                                    <span class="product-color-swatch-btn old-rose variation-btn">
-                                                                        Old Rose
-                                                                    </span>
+                                    </div>
+                                    <div class="row">
+                                        <% for(var i=0; i < data.length; i++) { %>
+                                            <div class="col-xl-3 col-lg-4 col-sm-6 mb--50">
+                                                <div class="zakas-product">
+                                                    <div class="product-inner">
+                                                        <figure class="product-image">
+                                                            <a href="/shopproduct/<%= data[i].productId %>">
+
+                                                                <img style="height: 380px;" src="<%= data[i].image_url[0] %>" alt="Products">
+                                                            </a>
+                                                            <div class="zakas-product-action">
+                                                                <div class="product-action d-flex">
+                                                                    <div class="product-size">
+                                                                        <a href="" class="action-btn">
+                                                                            <span class="current">
+                                                                                <%= data[i].brandsize %>
+                                                                            </span>
+                                                                        </a>
+
+                                                                    </div>
+                                                                    <div class="product-color">
+                                                                        <a href="" class="action-btn">
+                                                                            <%= data[i].brandcolor %>
+                                                                        </a>
+
+                                                                    </div>
+
                                                                 </div>
                                                             </div>
-                                                            <a data-bs-toggle="modal" data-bs-target="#productModal" class="action-btn quick-view">
-                                                                <i class="flaticon flaticon-eye"></i>
+                                                            <span class="product-badge">New</span>
+                                                        </figure>
+                                                        <div class="product-info">
+                                                            <h3 class="product-title mb--15">
+                                                                <a href="/shopproduct/<%= data[i].productId %>">
+                                                                    <%= data[i].name %>
+                                                                </a>
+                                                            </h3>
+                                                            <div class="product-price-wrapper mb--30">
+                                                                <span class="money">Mrp:
+                                                                    <%= data[i].mrp %>
+                                                                </span>
+                                                                <br>
+                                                                <span class="money">Our Price:
+                                                                    <%= data[i].ourprice %>
+                                                                </span>
+                                                                <br>
+                                                                <span class="money">Brand :
+                                                                    <%= data[i].brand %>
+                                                                </span>
+                                                            </div>
+                                                            <a href="#"
+                                                                class="btn btn-small btn-bg-sand btn-color-dark">Buy in
+                                                                App</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="zakas-product-list">
+                                                    <div class="product-inner">
+                                                        <figure class="product-image">
+                                                            <a href="/shopproduct/5abb5650-0fa5-11ec-a456-cb327ddb19fb">
+                                                                <img src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
+                                                                    alt="Products">
                                                             </a>
-                                                        </div>
-                                                    </div>
-                                                    <span class="product-badge">New</span>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h3 class="product-title mb--15">
-                                                        <a href="/shopproduct/<%= data[i].productId %>"><%= data[i].name %></a>
-                                                    </h3>
-                                                    <div class="product-price-wrapper mb--30">
-                                                        <span class="money"><%= data[i].ourprice %></span>
-                                                        <!-- <span class="money-separator">-</span>
-                                                        <span class="money">2000₹</span> -->
-                                                    </div>
-                                                    <a href="#" class="btn btn-small btn-bg-sand btn-color-dark">Buy in App</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="zakas-product-list">
-                                            <div class="product-inner">
-                                                <figure class="product-image">
-                                                    <a href="/shopproduct/5abb5650-0fa5-11ec-a456-cb327ddb19fb">
-                                                        <img src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg" alt="Products">
-                                                    </a>
-                                                    <div class="product-thumbnail-action">
-                                                        <a data-bs-toggle="modal" data-bs-target="#productModal" class="action-btn quick-view">
-                                                            <i class="flaticon flaticon-eye"></i>
-                                                        </a>
-                                                    </div>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h3 class="product-title mb--25">
-                                                        <a href="/shopproduct">Long Cartigen</a>
-                                                    </h3>
-                                                    <div class="zakas-product-action-list mb--20">
-                                                        <div class="product-size mb--25">
-                                                            <div class="product-size-swatch">
-                                                                <span class="product-size-swatch-btn variation-btn">
-                                                                    XL
-                                                                </span>
-                                                                <span class="product-size-swatch-btn variation-btn">
-                                                                    L
-                                                                </span>
-                                                                <span class="product-size-swatch-btn variation-btn">
-                                                                    M
-                                                                </span>
-                                                                <span class="product-size-swatch-btn variation-btn">
-                                                                    S
-                                                                </span>
+                                                            <div class="product-thumbnail-action">
+                                                                <a data-bs-toggle="modal" data-bs-target="#productModal"
+                                                                    class="action-btn quick-view">
+                                                                    <i class="flaticon flaticon-eye"></i>
+                                                                </a>
+                                                            </div>
+                                                        </figure>
+                                                        <div class="product-info">
+                                                            <h3 class="product-title mb--25">
+                                                                <a href="/shopproduct">Long Cartigen</a>
+                                                            </h3>
+                                                            <div class="zakas-product-action-list mb--20">
+                                                                <div class="product-size mb--25">
+                                                                    <div class="product-size-swatch">
+                                                                        <span
+                                                                            class="product-size-swatch-btn variation-btn">
+                                                                            XL
+                                                                        </span>
+                                                                        <span
+                                                                            class="product-size-swatch-btn variation-btn">
+                                                                            L
+                                                                        </span>
+                                                                        <span
+                                                                            class="product-size-swatch-btn variation-btn">
+                                                                            M
+                                                                        </span>
+                                                                        <span
+                                                                            class="product-size-swatch-btn variation-btn">
+                                                                            S
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-color">
+                                                                    <div class="product-color-swatch">
+                                                                        <span
+                                                                            class="product-color-swatch-btn variation-btn abbey">
+                                                                            Abbey
+                                                                        </span>
+                                                                        <span
+                                                                            class="product-color-swatch-btn variation-btn blue">
+                                                                            Blue
+                                                                        </span>
+                                                                        <span
+                                                                            class="product-color-swatch-btn variation-btn copper">
+                                                                            Copper
+                                                                        </span>
+                                                                        <span
+                                                                            class="product-color-swatch-btn variation-btn old-rose">
+                                                                            Old Rose
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-price-wrapper mb--30">
+                                                                <span class="money">800₹</span>
+                                                                <span class="money-separator">-</span>
+                                                                <span class="money">2000₹</span>
+                                                            </div>
+
+                                                            <p class="product-short-description mb--20">
+                                                                Donec accumsan auctor iaculis. Sed suscipit arcu ligula,
+                                                                at egestas magna molestie a. Proin ac ex maximus,
+                                                                ultrices justo eget, sodales orci. Aliquam egestas
+                                                                libero ac turpis pharetra
+                                                            </p>
+                                                            <div class="zakas-product-action-list d-flex">
+                                                                <a href="#"
+                                                                    class="btn btn-small btn-bg-sand btn-color-dark">Buy
+                                                                    in App</a>
+
                                                             </div>
                                                         </div>
-                                                        <div class="product-color">
-                                                            <div class="product-color-swatch">
-                                                                <span class="product-color-swatch-btn variation-btn abbey">
-                                                                    Abbey
-                                                                </span>
-                                                                <span class="product-color-swatch-btn variation-btn blue">
-                                                                    Blue
-                                                                </span>
-                                                                <span class="product-color-swatch-btn variation-btn copper">
-                                                                    Copper
-                                                                </span>
-                                                                <span class="product-color-swatch-btn variation-btn old-rose">
-                                                                    Old Rose
-                                                                </span>
-                                                            </div>
-                                                        </div>
                                                     </div>
-                                                    <div class="product-price-wrapper mb--30">
-                                                        <span class="money">800₹</span>
-                                                        <span class="money-separator">-</span>
-                                                        <span class="money">2000₹</span>
-                                                    </div>
-                                                    
-                                                    <p class="product-short-description mb--20">
-                                                        Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam egestas libero ac turpis pharetra
-                                                    </p>  
-                                                    <div class="zakas-product-action-list d-flex">
-                                                        <a href="#" class="btn btn-small btn-bg-sand btn-color-dark">Buy in App</a>
-                                                        
-                                                    </div>                                            
                                                 </div>
                                             </div>
-                                        </div>
+                                            <% } %>
                                     </div>
-                                    <% } %>
                                 </div>
                             </div>
                         </div>
-                     </div>
-                </div>
-                <br>
-        <!-- Main Content Wrapper Start -->
+                    </div>
+                    <br>
+                    <!-- Main Content Wrapper Start -->
 
-        <!-- Footer Start-->
-        <%- include("partials/footer") %>
-        <!-- Footer End-->
+                    <!-- Footer Start-->
+                    <%- include("partials/footer") %>
+                        <!-- Footer End-->
 
-        <!-- Searchform Popup Start -->
-        <div class="searchform__popup" id="searchForm">
-            <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-            <div class="searchform__body">
-                <p>Start typing and press Enter to search</p>
-                <form class="searchform">
-                    <input type="text" name="popup-search" id="popup-search" class="searchform__input" placeholder="Search Entire Store...">
-                    <button type="submit" class="searchform__submit"><i class="flaticon flaticon-magnifying-glass-icon"></i></button>
-                </form>
-            </div>
-        </div>
-        <!-- Searchform Popup End -->
+                        <!-- Searchform Popup Start -->
+                        <div class="searchform__popup" id="searchForm">
+                            <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+                            <div class="searchform__body">
+                                <p>Start typing and press Enter to search</p>
+                                <form class="searchform">
+                                    <input type="text" name="popup-search" id="popup-search" class="searchform__input"
+                                        placeholder="Search Entire Store...">
+                                    <button type="submit" class="searchform__submit"><i
+                                            class="flaticon flaticon-magnifying-glass-icon"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Searchform Popup End -->
 
-        <!-- Global Overlay Start -->
-        <div class="zakas-global-overlay"></div>
-        <!-- Global Overlay End -->
+                        <!-- Global Overlay Start -->
+                        <div class="zakas-global-overlay"></div>
+                        <!-- Global Overlay End -->
 
-        <!-- Qicuk View Modal Start -->
-        <div class="modal fade product-modal" id="productModal" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true"><i class="flaticon flaticon-cross"></i></span>
-                </button>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="zakas-element-carousel nav-vertical-center"
-                        data-slick-options='{
+                        <!-- Qicuk View Modal Start -->
+                        <div class="modal fade product-modal" id="productModal" tabindex="-1" role="dialog"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true"><i class="flaticon flaticon-cross"></i></span>
+                                        </button>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="zakas-element-carousel nav-vertical-center"
+                                                    data-slick-options='{
                             "slidesToShow": 1,
                             "slidesToScroll": 1,
                             "arrows": true,
                             "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-double-left" },
                             "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-double-right" }
-                        }'
-                        >
-                            <div class="product-image">
-                                <div class="product-image--holder">
-                                    <a href="/shopproduct">
-                                        <img src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg" alt="Product Image" class="primary-image">
-                                    </a>
-                                </div>
-                                <span class="product-badge sale">sale</span>
-                            </div>
-                            <div class="product-image">
-                                <div class="product-image--holder">
-                                    <a href="/shopproduct">
-                                        <img src="/assets/img/products/glamour-fashion-model-K4GT4V5.JPG" alt="Product Image" class="primary-image">
-                                    </a>
-                                </div>
-                                <span class="product-badge sale">sale</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="modal-box product-summary">
-                            <div class="product-navigation text-end mb--20">
-                                <!-- <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
+                        }'>
+                                                    <div class="product-image">
+                                                        <div class="product-image--holder">
+                                                            <a href="/shopproduct">
+                                                                <img src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
+                                                                    alt="Product Image" class="primary-image">
+                                                            </a>
+                                                        </div>
+                                                        <span class="product-badge sale">sale</span>
+                                                    </div>
+                                                    <div class="product-image">
+                                                        <div class="product-image--holder">
+                                                            <a href="/shopproduct">
+                                                                <img src="/assets/img/products/glamour-fashion-model-K4GT4V5.JPG"
+                                                                    alt="Product Image" class="primary-image">
+                                                            </a>
+                                                        </div>
+                                                        <span class="product-badge sale">sale</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="modal-box product-summary">
+                                                    <div class="product-navigation text-end mb--20">
+                                                        <!-- <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
                                 <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a> -->
-                            </div>
-                            <div class="product-rating d-flex mb--20">
-                                <div class="star-rating star-three">
-                                    <span>Rated <strong class="rating">5.00</strong> out of 5</span>
-                                </div>
-                            </div>
-                            <h3 class="product-title mb--20">Blue Cartigen</h3>
-                            <p class="product-short-description mb--25">Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus scelerisque. Vestibulum ut sem laoreet, feugiat tellus at, hendrerit arcu.</p>
-                            <div class="product-price-wrapper mb--25">
-                                <span class="money">200₹</span>
-                                <span class="price-separator">-</span>
-                                <span class="money">400₹</span>
-                            </div>
-                            <form action="#" class="variation-form mb--30">
-                                <div class="product-color-variations d-flex align-items-center mb--20">
-                                    <p class="variation-label">Color:</p>
-                                    <div class="product-color-variation variation-wrapper">
-                                        <div class="variation">
-                                            <a class="product-color-variation-btn red selected" data-bs-toggle="tooltip" data-bs-placement="top" title="Red">
-                                                <span class="product-color-variation-label">Red</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-color-variation-btn black" data-bs-toggle="tooltip" data-bs-placement="top" title="Black">
-                                                <span class="product-color-variation-label">Black</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-color-variation-btn pink" data-bs-toggle="tooltip" data-bs-placement="top" title="Pink">
-                                                <span class="product-color-variation-label">Pink</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-color-variation-btn blue" data-bs-toggle="tooltip" data-bs-placement="top" title="Blue">
-                                                <span class="product-color-variation-label">Blue</span>
-                                            </a>
+                                                    </div>
+                                                    <div class="product-rating d-flex mb--20">
+                                                        <div class="star-rating star-three">
+                                                            <span>Rated <strong class="rating">5.00</strong> out of
+                                                                5</span>
+                                                        </div>
+                                                    </div>
+                                                    <h3 class="product-title mb--20">Blue Cartigen</h3>
+                                                    <p class="product-short-description mb--25">Donec accumsan auctor
+                                                        iaculis. Sed suscipit arcu ligula, at egestas magna molestie a.
+                                                        Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam
+                                                        egestas libero ac turpis pharetra, in vehicula lacus
+                                                        scelerisque. Vestibulum ut sem laoreet, feugiat tellus at,
+                                                        hendrerit arcu.</p>
+                                                    <div class="product-price-wrapper mb--25">
+                                                        <span class="money">200₹</span>
+                                                        <span class="price-separator">-</span>
+                                                        <span class="money">400₹</span>
+                                                    </div>
+                                                    <form action="#" class="variation-form mb--30">
+                                                        <div
+                                                            class="product-color-variations d-flex align-items-center mb--20">
+                                                            <p class="variation-label">Color:</p>
+                                                            <div class="product-color-variation variation-wrapper">
+                                                                <div class="variation">
+                                                                    <a class="product-color-variation-btn red selected"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Red">
+                                                                        <span
+                                                                            class="product-color-variation-label">Red</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="variation">
+                                                                    <a class="product-color-variation-btn black"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Black">
+                                                                        <span
+                                                                            class="product-color-variation-label">Black</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="variation">
+                                                                    <a class="product-color-variation-btn pink"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Pink">
+                                                                        <span
+                                                                            class="product-color-variation-label">Pink</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="variation">
+                                                                    <a class="product-color-variation-btn blue"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Blue">
+                                                                        <span
+                                                                            class="product-color-variation-label">Blue</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="product-size-variations d-flex align-items-center mb--15">
+                                                            <p class="variation-label">Size:</p>
+                                                            <div class="product-size-variation variation-wrapper">
+                                                                <div class="variation">
+                                                                    <a class="product-size-variation-btn selected"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="S">
+                                                                        <span
+                                                                            class="product-size-variation-label">S</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="variation">
+                                                                    <a class="product-size-variation-btn"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="M">
+                                                                        <span
+                                                                            class="product-size-variation-label">M</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="variation">
+                                                                    <a class="product-size-variation-btn"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="L">
+                                                                        <span
+                                                                            class="product-size-variation-label">L</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="variation">
+                                                                    <a class="product-size-variation-btn"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="XL">
+                                                                        <span
+                                                                            class="product-size-variation-label">XL</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="" class="reset_variations">Clear</a>
+                                                    </form>
+                                                    <div
+                                                        class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
+                                                        <div
+                                                            class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
+                                                            <label class="quantity-label"
+                                                                for="quick-qty">Quantity:</label>
+                                                            <div class="quantity">
+                                                                <input type="number" class="quantity-input" name="qty"
+                                                                    id="quick-qty" value="1" min="1">
+                                                            </div>
+                                                        </div>
+                                                        <button type="button"
+                                                            class="btn btn-small btn-bg-red btn-color-white btn-hover-2"
+                                                            onclick="window.location.href='cart.html'">
+                                                            Buy in App
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-footer-meta">
+                                                        <p><span>Category:</span>
+                                                            <a href="/shopnow">Full Sweater</a>,
+                                                            <a href="/shopnow">SweatShirt</a>,
+                                                            <a href="/shopnow">Jacket</a>,
+                                                            <a href="/shopnow">Blazer</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-size-variations d-flex align-items-center mb--15">
-                                    <p class="variation-label">Size:</p>   
-                                    <div class="product-size-variation variation-wrapper">
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn selected" data-bs-toggle="tooltip" data-bs-placement="top" title="S">
-                                                <span class="product-size-variation-label">S</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="M">
-                                                <span class="product-size-variation-label">M</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="L">
-                                                <span class="product-size-variation-label">L</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="XL">
-                                                <span class="product-size-variation-label">XL</span>
-                                            </a>
-                                        </div>
-                                    </div>                                 
-                                </div>
-                                <a href="" class="reset_variations">Clear</a>
-                            </form>
-                            <div class="product-action d-flex flex-sm-row flex-column align-items-sm-center align-items-start mb--30">
-                                <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
-                                    <label class="quantity-label" for="quick-qty">Quantity:</label>
-                                    <div class="quantity">
-                                        <input type="number" class="quantity-input" name="qty" id="quick-qty" value="1" min="1">
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2" onclick="window.location.href='cart.html'">
-                                    Buy in App
-                                </button>
-                            </div>  
-                            <div class="product-footer-meta">
-                                <p><span>Category:</span>
-                                    <a href="/shopnow">Full Sweater</a>,
-                                    <a href="/shopnow">SweatShirt</a>,
-                                    <a href="/shopnow">Jacket</a>,
-                                    <a href="/shopnow">Blazer</a>
-                                </p>
                             </div>
                         </div>
-                    </div>
+                        <!-- Qicuk View Modal End -->
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Qicuk View Modal End -->
-    </div>
-    <!-- Main Wrapper End -->
- 
+                <!-- Main Wrapper End -->
 
-    <!-- ************************* JS Files ************************* -->
 
-    <!-- jQuery JS -->
-    <script src="/assets/js/vendor.js"></script>
+                <!-- ************************* JS Files ************************* -->
 
-    <!-- Main JS -->
-    <script src="/assets/js/main.js"></script>
+                <!-- jQuery JS -->
+                <script src="/assets/js/vendor.js"></script>
+
+                <!-- Main JS -->
+                <script src="/assets/js/main.js"></script>
 
 </body>
 
