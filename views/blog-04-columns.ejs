@@ -70,16 +70,22 @@
 
       <!-- Main Content Wrapper Start -->
       <div class="main-content-wrapper">
+       
         <div class="page-content-inner blog-page-sidebar ptb--80">
           <div class="container">
+           
             <div class="row">
+              
               <div class="col-12">
+                
                 <div class="row">
+                  <% for(var i=0; i < data.length; i++) { %>
                   <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
+                    
                     <article class="blog blog-style-2">
                       <div class="blog-media">
                         <figure class="image">
-                          <a href="/singlepostimage">
+                          <a href="/singlepostimage/<%= data[i].ObjectId %>">
                             <img
                               height="300px"
                               src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
@@ -90,22 +96,13 @@
                       </div>
                       <div class="blog-info">
                         <h2 class="blog-title">
-                          <a href="/singlepostimage">She Belived She Could</a>
+                          <a href="/singlepostimage/<%= data[i].ObjectId %>"><%= data[i].title %></a>
                         </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
+                        <div class="blog-meta"> 
+                        
                           <div class="blog-meta--right">
                             <a
-                              href="/singlepostimage"
+                              href="/singlepostimage/<%= data[i].ObjectId %>"
                               class="btn btn-no-bg btn-color-dark"
                               >Read More <i class="fa fa-angle-double-right"></i
                             ></a>
@@ -113,306 +110,19 @@
                         </div>
                       </div>
                     </article>
+                   
                   </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/street-fashion-9FCAD6F.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">Monday to Sunday</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
+                  <% } %>
                   </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">Monday to Sunday</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">Monday to Sunday</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">She Belived She Could</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/street-fashion-9FCAD6F.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">Monday to Sunday</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">Monday to Sunday</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="col-xl-3 col-lg-4 col-md-6 mb--50">
-                    <article class="blog blog-style-2">
-                      <div class="blog-media">
-                        <figure class="image">
-                          <a href="/singlepostimage">
-                            <img
-                              height="300px"
-                              src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </figure>
-                      </div>
-                      <div class="blog-info">
-                        <h2 class="blog-title">
-                          <a href="/singlepostimage">Monday to Sunday</a>
-                        </h2>
-                        <div class="blog-meta">
-                          <div class="blog-meta--left">
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-comment-o"></i>
-                              <sup>05</sup>
-                            </a>
-                            <a href="/singlepostimage" class="blog-meta-btn">
-                              <i class="fa fa-heart-o"></i>
-                              <sup>06</sup>
-                            </a>
-                          </div>
-                          <div class="blog-meta--right">
-                            <a
-                              href="/singlepostimage"
-                              class="btn btn-no-bg btn-color-dark"
-                              >Read More <i class="fa fa-angle-double-right"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                  
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <nav class="pagination-wrap">
-                      <ul class="pagination">
-                        <li>
-                          <a href="#" class="prev page-number"
-                            ><i class="fa fa-angle-double-left"></i
-                          ></a>
-                        </li>
-                        <li><span class="current page-number">1</span></li>
-                        <li><a href="#" class="page-number">2</a></li>
-                        <li><a href="#" class="page-number">3</a></li>
-                        <li>
-                          <a href="#" class="next page-number"
-                            ><i class="fa fa-angle-double-right"></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
+                
               </div>
+              
             </div>
           </div>
         </div>
+        
       </div>
       <!-- Main Content Wrapper End -->
 
