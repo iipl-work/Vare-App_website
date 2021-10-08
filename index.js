@@ -74,12 +74,13 @@ app.get('/blog', (req, res) => {
 
 
 });
-app.get('/singlepostimage', (req, res) => {
+app.get('/singlepostimage/:id', (req, res) => {
 
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("vare");
     dbo.collection("blog").findOne({ "_id": req.params.id }, function (err, result) {
+      console.log("hi");
       if (err) throw err;
       console.log(result);
       db.close();
