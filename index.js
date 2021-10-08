@@ -5,6 +5,8 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://sowmya:iNNrxOhVfEdvsUaI@vare.cnw2n.mongodb.net/vare?retryWrites=true&w=majority";
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+const { ObjectId } = require('mongodb');
+
 app.get('/', (req, res) => {
   res.render('newindex', { foo: 'FOO' });
 });
@@ -63,7 +65,7 @@ app.get('/blog', (req, res) => {
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("vare");
-    dbo.collection("blog").find({}).toArray(function (err, result) {
+    dbo.collection("blog").find({}, {rich_text_Editor:-1}).toArray(function (err, result) {
       if (err) throw err;
       // console.log(result);
       db.close();
@@ -75,11 +77,11 @@ app.get('/blog', (req, res) => {
 
 });
 app.get('/singlepostimage/:id', (req, res) => {
-
+  console.log(" req.params.id",  req.params.id);
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("vare");
-    dbo.collection("blog").findOne({ "_id": req.params.id }, function (err, result) {
+    dbo.collection("blog").findOne({ "_id": ObjectId(req.params.id) }, function (err, result) {
       console.log("hi");
       if (err) throw err;
       console.log(result);
