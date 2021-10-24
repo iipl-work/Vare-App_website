@@ -20,8 +20,12 @@
 
         <!-- style css -->
         <link rel="stylesheet" href="/assets/css/main.css">
-
-</head>
+        <!-- custom css -->
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <style>
+       
+    </style>
+    </head>
 
 <body>
 
@@ -58,11 +62,11 @@
 
             <!-- Main Content Wrapper Start -->
             <div class="main-content-wrapper">
-                <div class="shop-page-wrapper ptb--80">
+                <div class="shop-page-wrapper pt--80">
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="shop-toolbar mb--50">
+                                <div class="shop-toolbar mb--50 d-none" >
                                     <div class="row align-items-center">
                                         <div class="col-md-5 mb-sm--50 mb-xs--10">
                                             <div class="shop-toolbar__left">
@@ -88,9 +92,7 @@
                                     </div>
                                 </div>
                                 <div class="shop-products">
-                                    <div>
-
-                                    </div>
+                                    
                                     <div class="row">
                                         <% for(var i=0; i < data.length; i++) { %>
                                             <div class="col-xl-3 col-lg-4 col-sm-6 mb--50">
@@ -99,45 +101,68 @@
                                                         <figure class="product-image">
                                                             <a href="/shopproduct/<%= data[i].productId %>">
 
-                                                                <img style="height: 380px;" src="<%= data[i].image_url[0] %>" alt="Products">
+                                                                <img src="<%= data[i].image_url[0] %>" alt="Products">
                                                             </a>
-                                                            <div class="zakas-product-action">
+                                                            <!-- <div class="zakas-product-action">
                                                                 <div class="product-action d-flex">
+                                                                   
                                                                     <div class="product-size">
                                                                         <a href="" class="action-btn">
                                                                             <span class="current">
                                                                                 <%= data[i].brandsize %>
                                                                             </span>
                                                                         </a>
-
+                                                                        <div class="product-size-swatch">
+                                                                            <span class="product-size-swatch-btn variation-btn">
+                                                                                L
+                                                                            </span>
+                                                                            <span class="product-size-swatch-btn variation-btn">
+                                                                                M
+                                                                            </span>
+                                                                            <span class="product-size-swatch-btn variation-btn">
+                                                                                S
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
                                                                     <div class="product-color">
                                                                         <a href="" class="action-btn">
                                                                             <%= data[i].brandcolor %>
                                                                         </a>
-
+                                                                        <div class="product-color-swatch">
+                                                                            <span class="product-color-swatch-btn blue variation-btn">
+                                                                                Blue
+                                                                            </span>
+                                                                            <span class="product-color-swatch-btn copper variation-btn">
+                                                                                Copper
+                                                                            </span>
+                                                                            <span class="product-color-swatch-btn old-rose variation-btn">
+                                                                                Old Rose
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
 
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
+                                                            <% if (i % 2 == 0) { %>
                                                             <span class="product-badge">New</span>
+                                                            <% } %>
                                                         </figure>
                                                         <div class="product-info">
-                                                            <h3 class="product-title mb--15">
-                                                                <a href="/shopproduct/<%= data[i].productId %>">
-                                                                    <%= data[i].name %>
+                                                            <h3 class="product-title mb--10" style="text-transform: capitalize;white-space: nowrap;
+                                                            text-overflow: ellipsis;
+                                                            overflow: hidden;">
+                                                                <a href="/shopproduct/<%= data[i].productId %>" >
+                                                                    <%= data[i].name %> 
                                                                 </a>
                                                             </h3>
-                                                            <div class="product-price-wrapper mb--30">
-                                                                <span class="money">Mrp:
-                                                                    <%= data[i].mrp %>
-                                                                </span>
-                                                                <br>
-                                                                <span class="money">Our Price:
-                                                                    <%= data[i].ourprice %>
-                                                                </span>
-                                                                <br>
-                                                                <span class="money">Brand :
+                                                            <div class="product-price-wrapper mb--15">
+                                                                <span class="money">  <span class="our-price price-format" >  <%= data[i].ourprice %> </span></span>
+                                                                <span class="money-separator">-</span>
+                                                                <span class="money"> <span class="mrp-strike price-format mrp-price">  <%= data[i].mrp %> </span></span>
+                                                            </div>
+                                                            <div class="product-brand mb--15">
+                                                                                                                   
+                                                                <span class="vare-brand">Brand :
                                                                     <%= data[i].brand %>
                                                                 </span>
                                                             </div>
@@ -147,7 +172,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="zakas-product-list">
+                                                <div class="zakas-product-list" style="display: none;">
                                                     <div class="product-inner">
                                                         <figure class="product-image">
                                                             <a href="/shopproduct/5abb5650-0fa5-11ec-a456-cb327ddb19fb">
@@ -232,6 +257,15 @@
                                             <% } %>
                                     </div>
                                 </div>
+                                <nav class="pagination-wrap">
+                                    <ul class="pagination">
+                                        <li><a href="#" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
+                                        <li><span class="current page-number">1</span></li>
+                                        <li><a href="#" class="page-number">2</a></li>
+                                        <li><a href="#" class="page-number">3</a></li>
+                                        <li><a href="#" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -448,6 +482,8 @@
 
                 <!-- Main JS -->
                 <script src="/assets/js/main.js"></script>
+                  <!-- Custom JS -->
+                  <script src="/assets/js/custom.js"></script>
 
 </body>
 

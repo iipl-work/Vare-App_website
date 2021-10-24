@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="/assets/css/vendor.css" />
 
     <!-- style css -->
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />        <!-- custom css -->
+    <link rel="stylesheet" href="/assets/css/custom.css" />
 </head>
 
 <body>
@@ -81,8 +82,9 @@
                                                 "arrows": false, 
                                                 "asNavFor": ".nav-slider"
                                             }'>
+                                            <% for(var i=0; i < 3; i++) { %>
                           <figure class="product-gallery__image zoom">
-                            <img height="500px" src="<%= image_url[0] %>" alt="Product" />
+                            <img height="500px" src="<%= image_url[0] %>" alt="Productss" />
                             <div class="product-gallery__actions">
                               <button class="action-btn btn-zoom-popup">
                                 <i class="fa fa-eye"></i>
@@ -91,8 +93,8 @@
                                   class="fa fa-play"></i></a>
                             </div>
                           </figure>
-
-                          <figure class="product-gallery__image zoom">
+                          <% } %>
+                          <!-- <figure class="product-gallery__image zoom">
                             <img height="500px" src="<%= image_url[0] %>" alt="Product" />
                             <div class="product-gallery__actions">
                               <button class="action-btn btn-zoom-popup">
@@ -125,7 +127,7 @@
                               <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM" class="action-btn video-popup"><i
                                   class="fa fa-play"></i></a>
                             </div>
-                          </figure>
+                          </figure> -->
                         </div>
                       </div>
                     </div>
@@ -171,10 +173,12 @@
                                                 } 
                                             }
                                         ]'>
+                                        <% for(var i=0; i < 3; i++) { %>
                         <figure class="product-gallery__nav-image--single">
-                          <img src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg" alt="Products" />
+                          <img src="<%= image_url[0] %>" alt="Products" />
                         </figure>
-                        <figure class="product-gallery__nav-image--single">
+                        <% } %>
+                        <!-- <figure class="product-gallery__nav-image--single">
                           <img src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
                             alt="Products" />
                         </figure>
@@ -184,7 +188,7 @@
                         </figure>
                         <figure class="product-gallery__nav-image--single">
                           <img src="/assets/img/products/glamour-fashion-model-K4GT4V5.JPG" alt="Products" />
-                        </figure>
+                        </figure> -->
                       </div>
                     </div>
                   </div>
@@ -216,16 +220,49 @@
                     pharetra, in vehicula lacus scelerisque. Vestibulum ut sem
                     laoreet, feugiat tellus at, hendrerit arcu.
                   </p>
-                  <div class="product-price-wrapper mb--30">
+                  <div class="product-price-wrapper mb--25">
+                    <span class="money "><span class=" our-price price-format"><%= mrp %></span></span>
+                    <span class="price-separator">-</span>
+                    <span class="money "> <span class=" mrp-strike mrp-price price-format"><%= ourprice %> </span></span>
+                </div>
+                <form action="#" class="variation-form mb--20">
+                  <div class="product-size-variations d-flex align-items-center mb--15">
+                      <p class="variation-label">Size:</p>   
+                      <div class="product-size-variation variation-wrapper">
+                          <div class="variation">
+                              <a class="product-size-variation-btn selected" data-bs-toggle="tooltip" data-bs-placement="top" title="S">
+                                  <span class="product-size-variation-label">S</span>
+                              </a>
+                          </div>
+                          <div class="variation">
+                              <a class="product-size-variation-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="M">
+                                  <span class="product-size-variation-label">M</span>
+                              </a>
+                          </div>
+                          <div class="variation">
+                              <a class="product-size-variation-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="L">
+                                  <span class="product-size-variation-label">L</span>
+                              </a>
+                          </div>
+                          <div class="variation">
+                              <a class="product-size-variation-btn" data-bs-toggle="tooltip" data-bs-placement="top" title="XL">
+                                  <span class="product-size-variation-label">XL</span>
+                              </a>
+                          </div>
+                      </div>                                 
+                  </div>
+                  <a href="" class="reset_variations">Clear</a>
+              </form>
+                  <!-- <div class="product-price-wrapper mb--30">
                     <span class="money">Mrp:
-                        <%= mrp %>
+                        <span class="price-format"><%= mrp %></span>
                     </span>
                     <span class="money">Our Price:
-                        <%= ourprice %>
+                      <span class="price-format"><%= ourprice %> </span>
                     </span>
                     <br>
                     
-                </div>
+                </div> -->
                   <div class="
                       product-action
                       d-flex
@@ -655,6 +692,8 @@
 
   <!-- Main JS -->
   <script src="/assets/js/main.js"></script>
+      <!-- Custom JS -->
+      <script src="/assets/js/custom.js"></script>
 </body>
 
 </html>

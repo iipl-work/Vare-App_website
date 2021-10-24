@@ -18,9 +18,15 @@ app.get('/shopnow', (req, res) => {
     var dbo = db.db("vare");
     dbo.collection("products").find({}).toArray(function (err, result) {
       if (err) throw err;
-      // console.log(result);
+      
+      
       db.close();
-      res.render('listingpage', { "data": result });
+      if (req.query.json == 1 || req.query.json == '1') {
+        res.json({"data" :result});
+        return;
+      }
+      // console.log("PROD LIST", result.menuJson);
+      res.render('listingpage', { "data": result});
 
     });
   });
@@ -33,8 +39,12 @@ app.get('/shopproduct/:id', (req, res) => {
     var dbo = db.db("vare");
     dbo.collection("products").findOne({ "productId": req.params.id }, function (err, result) {
       if (err) throw err;
-      console.log(result);
+      console.log("DETAIL",result);
       db.close();
+      if (req.query.json == 1 || req.query.json == '1') {
+        res.json({"data" :result});
+        return;
+      }
       res.render('product-details-affiliate', result);
     });
   });

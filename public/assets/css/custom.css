@@ -1,0 +1,15 @@
+.money .mrp-strike {
+    text-decoration: line-through;
+}
+.money .our-price {
+    color: #abd263 !important;
+    font-size: 22px;
+    font-weight: 600;
+}
+.money .mrp-price {
+    font-size: 16px !important;
+    color: red !important;
+}
+.product-summary .product-title {
+    text-transform: capitalize !important;
+} 
