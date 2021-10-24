@@ -58,18 +58,66 @@ var menu=[];
 });
 app.get('/shopnow', (req, res) => {
 
-
+  var menu=[];
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("vare");
-    dbo.collection("products").find({}).toArray(function (err, result) {
+    dbo.collection("category").find({level:1}).toArray(async function (err, result)  {
       if (err) throw err;
       // console.log(result);
-      db.close();
-      res.render('listingpage', { "data": result });
+      
+     
+      for(var i=0;i<result.length;i++)
+      {
+        var sublist=await dbo.collection("category").find({level:2,parent_id:result[i].id}).toArray();
+        var submenu={};
+        submenu.items=[];
+        
+        submenu.ischild=sublist.length>0?true:false;
+
+        submenu.parent=result[i].id;
+        console.log("iiiiiiiiii-------",sublist);
+        for(var j=0;j<sublist.length;j++)
+      {
+        console.log("jjjjjjj-------",sublist[j]);
+        var sub2list=await dbo.collection("category").find({level:3,parent_id:sublist[j].id}).toArray();
+        var sub2menu={};
+        console.log("333333333333-------",sub2list);
+        sub2menu.items=sub2list;
+        sub2menu.ischild=sub2list.length>0?true:false;
+        sub2menu.parent=sublist[j].id;
+        
+        submenu.items.push(sub2menu);
+        
+      }
+      menu.push(submenu);
+      console.log("out-------",menu);
+
+      }
+      
+      console.log("out-9999999------",menu);
+      dbo.collection("products").find({}).toArray(function (err, result) {
+        if (err) throw err;
+        // console.log(result);
+        db.close();
+        res.render('listingpage', { "data": result ,"menu":menu});
+  
+      });
 
     });
   });
+
+  // MongoClient.connect(url, function (err, db) {
+  //   if (err) throw err;
+  //   var dbo = db.db("vare");
+  //   dbo.collection("products").find({}).toArray(function (err, result) {
+  //     if (err) throw err;
+  //     // console.log(result);
+  //     db.close();
+  //     res.render('listingpage', { "data": result });
+
+  //   });
+  // });
 
 });
 
