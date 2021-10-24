@@ -26,7 +26,9 @@ var menu=[];
         var sublist=await dbo.collection("category").find({level:2,parent_id:result[i].id}).toArray();
         var submenu={};
         submenu.items=[];
-        submenu.ischild=true;
+        
+        submenu.ischild=sublist.length>0?true:false;
+
         submenu.parent=result[i].id;
         console.log("iiiiiiiiii-------",sublist);
         for(var j=0;j<sublist.length;j++)
@@ -36,7 +38,7 @@ var menu=[];
         var sub2menu={};
         console.log("333333333333-------",sub2list);
         sub2menu.items=sub2list;
-    
+        sub2menu.ischild=sub2list.length>0?true:false;
         sub2menu.parent=sublist[j].id;
         
         submenu.items.push(sub2menu);
