@@ -100,6 +100,10 @@ app.get('/shopnow', (req, res) => {
         if (err) throw err;
         // console.log(result);
         db.close();
+        if (req.query.json == 1 || req.query.json == '1') {
+          res.json({ "data": result ,"menu":menu});
+          return;
+        }
         res.render('listingpage', { "data": result ,"menu":menu});
   
       });

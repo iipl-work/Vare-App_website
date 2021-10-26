@@ -1,4 +1,10 @@
  <!-- Header Start -->
+<style>
+    .mainmenu {
+        text-transform: capitalize;
+    }
+</style>
+
  <header class="header">
     <div class="header-inner fixed-header">
         <div class="container">
@@ -14,197 +20,34 @@
                         </div> 
                         <div class="mainmenu-nav d-none d-lg-block">
                             <ul class="mainmenu">
+                                <% for(var i=0; i < menu.length; i++) { %>
                                 <li class="mainmenu__item menu-item-has-children active">
                                     <a href="index.html" class="mainmenu__link">
-                                        <span class="mm-text">Women</span>
+                                        <span class="mm-text"><%= menu[i].parent %></span>
                                     </a>
                                     <ul class="megamenu two-column">
+                                        <% for(var j=0; j < menu[i].items.length; j++) { %>
                                         <li>
                                             <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Sarees</span>
+                                                <span class="mm-text"><%= menu[i].items[j].parent %></span>
                                             </a>
                                             <ul>
+                                                <% for(var k=0; k < menu[i].items[j].items.length; k++) { %>
                                                 <li>
                                                     <a href="index.html">
-                                                        <span class="mm-text">Normal</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-02.html">
-                                                        <span class="mm-text">Traditional</span>
+                                                        <span class="mm-text"><%= menu[i].items[j].items[k].name %></span>
                                                     </a>
                                                 </li>
                                                
+                                                <% } %>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Kurtis</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index-06.html">
-                                                        <span class="mm-text">All Kurtis</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="mainmenu__item menu-item-has-children ">
-                                    <a href="index.html" class="mainmenu__link">
-                                        <span class="mm-text">Men</span>
-                                    </a>
-                                    <ul class="megamenu two-column">
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Top Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index.html">
-                                                        <span class="mm-text">Formal Shirts</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-02.html">
-                                                        <span class="mm-text">Traditional</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Bottom Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index-06.html">
-                                                        <span class="mm-text">Jeans</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="mainmenu__item menu-item-has-children ">
-                                    <a href="index.html" class="mainmenu__link">
-                                        <span class="mm-text">Accessories</span>
-                                    </a>
-                                    <ul class="megamenu two-column">
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Top Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index.html">
-                                                        <span class="mm-text">Formal Shirts</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-02.html">
-                                                        <span class="mm-text">Traditional</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Bottom Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index-06.html">
-                                                        <span class="mm-text">Jeans</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="mainmenu__item menu-item-has-children ">
-                                    <a href="index.html" class="mainmenu__link">
-                                        <span class="mm-text">Kids</span>
-                                    </a>
-                                    <ul class="megamenu two-column">
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Top Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index.html">
-                                                        <span class="mm-text">Formal Shirts</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-02.html">
-                                                        <span class="mm-text">Traditional</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Bottom Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index-06.html">
-                                                        <span class="mm-text">Jeans</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="mainmenu__item menu-item-has-children ">
-                                    <a href="index.html" class="mainmenu__link">
-                                        <span class="mm-text">Jewellery</span>
-                                    </a>
-                                    <ul class="megamenu two-column">
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Top Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index.html">
-                                                        <span class="mm-text">Formal Shirts</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-02.html">
-                                                        <span class="mm-text">Traditional</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text">Bottom Wear</span>
-                                            </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="index-06.html">
-                                                        <span class="mm-text">Jeans</span>
-                                                    </a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li>
+                                        <% } %>
+                                       
                                     </ul>
                                 </li>
                                 
+                                <% } %>
                                 <!-- <li class="mainmenu__item">
                                     <a href="/contact" class="mainmenu__link">
                                         <span class="mm-text">Contact Us</span>
