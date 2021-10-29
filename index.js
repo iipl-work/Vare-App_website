@@ -195,5 +195,22 @@ app.get('/singlepostimage/:id', (req, res) => {
   // res.render('single-post-image', { foo: 'FOO' });
 });
 
+app.get('/home', (req, res) => {
+
+MongoClient.connect(url, function (err, db) {
+  if (err) throw err;
+  var dbo = db.db("vare");
+  dbo.collection("configuration").findOne({"name":"homepage"}, function (err, result) {
+    
+    if (err) throw err;
+    console.log(result);
+    db.close();
+    res.json(result);
+  });
+});
+
+// res.render('single-post-image', { foo: 'FOO' });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log('Example app listening on port 3000!'));
