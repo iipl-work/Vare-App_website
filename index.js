@@ -242,7 +242,7 @@ app.get('/404', (req, res) => {
 app.get('/login-register', (req, res) => {
   res.render('login-register', { foo: 'FOO' });
 });
-app.get('/blog', (req, res) => {
+app.get('/blog/:tagname', (req, res) => {
   
 
   var menu=[];
@@ -281,9 +281,17 @@ app.get('/blog', (req, res) => {
       console.log("out-------",menu);
 
       }
-    dbo.collection("blog").find({}, {rich_text_Editor:-1}).toArray(function (err, result) {
+      var filter={};
+      if(req.params.tagname=="all")
+      {
+        
+      }else
+      {
+        filter.tags={ $in: [req.params.tagname] };
+      }
+    dbo.collection("blog").find(filter, {rich_text_Editor:-1}).toArray(function (err, result) {
       if (err) throw err;
-      // console.log(result);
+       console.log(result);
       db.close();
       res.render('blog-04-columns', { "data": result,menu:menu });
 
