@@ -44,7 +44,7 @@
 
     <!-- Main Wrapper Start -->
     <div class="wrapper">
-      <%- include("partials/header2") %>
+      <%- include("partials/header2",menu) %>
 
       <!-- Breadcrumb area Start -->
       <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
@@ -77,7 +77,7 @@
                   <!-- Single Blog Start Here -->
                   <article class="single-post-details">
                     <div class="entry-header">
-                      <h2 class="entry-title"><%= title %></h2>
+                      <h2 class="entry-title"><%= result.title %></h2>
                       <div class="entry-meta mb--30">
                         <a href="/singlepostimage" class="posted-on"
                           >September 15, 2021</a
@@ -86,101 +86,9 @@
                         <a href="/singlepostimage">Life Style</a>
                       </div>
                     </div>
-                    <div class="entry-media">
-                      <div class="image">
-                        <img
-                          src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg"
-                          alt="Post Thumbnail"
-                        />
-                      </div>
-                    </div>
-                    <div class="entry-content">
-                      <p>
-                        Praesent sed ex vel mauris eleifend mollis. Vestibulum
-                        dictum sodales ante, ac pulvinar urna sollicitudin in.
-                        Suspendisse sodales dolor nec mattis convallis. Quisque
-                        ut nulla viverra, posuere lorem eget, ultrices metus.
-                        Nulla facilisi. Duis aliquet, eros in auctor aliquam,
-                        tortor justo laoreet nisi, nec pulvinar lectus diam nec
-                        libero. Nullam sit amet dia
-                      </p>
-                      <p>
-                        Cras porta posuere lectus, vitae consectetur dolor
-                        elementum id. Ut interdum, sem eget varius eleifend, ex
-                        risus gravida purus, sed finibus tortor nisi maximus
-                        orci. Etiam vel sollicitudin nisi. In ipsum tortor,
-                        vulputate nec est in, pharetra malesuada diam. Praesent
-                        ullamcorper lacinia ultrices. Etiam semper cursus mi, id
-                        tempor neque porta non. Praesent nec faucibus risus.
-                        Morbi aliquam hendrerit felis, eu cursus orci. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                        et ante a felis egestas varius quis eget urna. Mauris
-                        blandit, sem venenatis blandit vehicula, neque leo
-                        eleifend ante, id porta enim odio sit amet dolor. Duis
-                        finibus magna id justo egestas tincidunt. Aliquam eu
-                        tristique lorem. Morbi rutrum accumsan sem, ut rhoncus
-                        tortor tincidunt eget. Phasellus eros massa, molestie id
-                        molestie a, maximus id tortor. Aenean sit amet arcu
-                        varius, elementum sapien ut, tristique est.
-                      </p>
-                      <p>
-                        Nullam viverra convallis tellus. Nulla fermentum dictum
-                        congue. Quisque enim felis, molestie ac tempor vel,
-                        auctor a magna. Sed viverra laoreet turpis, vitae
-                        pellentesque sem viverra sed. Integer posuere est a sem
-                        viverra
-                      </p>
-                      <figure class="mb--30 image-with-video-btn btn-center">
-                        <a
-                          href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
-                          class="video-popup"
-                        >
-                          <img
-                            src="/assets/img/products/portrait-fashionable-woman-street-fashion-2EGQRTL.jpg"
-                            alt="blog"
-                          />
-                          <span class="video-btn video-btn-2"></span>
-                        </a>
-                      </figure>
-                      <h3>7 Reason why you need to work for a big company</h3>
-                      <p>
-                        Praesent sed ex vel mauris eleifend mollis. Vestibulum
-                        dictum sodales ante, ac pulvinar urna sollicitudin in.
-                        Suspendisse sodales dolor nec mattis convallis. Quisque
-                        ut nulla viverra, posuere lorem eget, ultrices metus.
-                        Nulla facilisi. Duis aliquet, eros in auctor aliquam,
-                        tortor justo laoreet nisi, nec pulvinar lectus diam nec
-                        libero. Nullam sit amet dia
-                      </p>
-                      <ul class="list list-disc">
-                        <li>
-                          Praesent sed ex vel mauris eleifend mollis. Vestibulum
-                          dictum sodales ante, ac pulvinar urna sollicitudin in.
-                          Suspendisse sodales dolor nec mattis conva.
-                        </li>
-                        <li>
-                          Cras porta posuere lectus, vitae consectetur dolor
-                          elementum id. Ut interdum, sem eget varius eleifend
-                        </li>
-                      </ul>
-                      <p>
-                        Cras porta posuere lectus, vitae consectetur dolor
-                        elementum id. Ut interdum, sem eget varius eleifend, ex
-                        risus gravida purus, sed finibus tortor nisi maximus
-                        orci. Etiam vel sollicitudin nisi. In ipsum tortor,
-                        vulputate nec est in, pharetra malesuada diam. Praesent
-                        ullamcorper lacinia ultrices. Etiam semper cursus mi, id
-                        tempor neque porta non. Praesent nec faucibus risus.
-                        Morbi aliquam hendrerit felis, eu cursus orci. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                        et ante a felis egestas varius quis eget urna. Mauris
-                        blandit, sem venenatis blandit vehicula, neque leo
-                        eleifend ante, id porta enim odio sit amet dolor. Duis
-                        finibus magna id justo egestas tincidunt. Aliquam eu
-                        tristique lorem. Morbi rutrum accumsan sem, ut rhoncus
-                        tortor tincidunt eget.
-                      </p>
-                    </div>
+                  
+                  
+                    <div id="blog-htmlview"></div>
                     <div class="entry-footer-meta">
                       <div class="tag-list">
                         <span>
@@ -206,7 +114,7 @@
                     <ul class="social social-sharing">
                       <li class="social__item">
                         <a
-                          href="https://facebook.com"
+                          href=""
                           target="_blank"
                           rel="noopener"
                           class="social__link facebook"
@@ -248,427 +156,26 @@
                   </div>
                   <!-- Social Sharing Icons End Here -->
 
-                  <!-- Post Navigation Start Here -->
-                  <nav class="post-navigation">
-                    <div class="nav-links">
-                      <div class="nav-prev nav-links__inner">
-                        <a href="/singlepostimage" class="nav-links__link"
-                          >Prev Post</a
-                        >
-                        <span class="nav-links__text">Prev Post</span>
-                        <div class="nav-links__thumb">
-                          <img
-                            src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
-                            alt="Prev Post"
-                          />
-                        </div>
-                        <div class="nav-links__content">
-                          <h4 class="nav-links__title">Summer Beach 2019</h4>
-                          <span class="nav-links__meta"
-                            >August 29, 2018 - by Tony Stark</span
-                          >
-                        </div>
-                      </div>
-                      <div class="nav-next nav-links__inner">
-                        <a href="/singlepostimage" class="nav-links__link"
-                          >Next Post</a
-                        >
-                        <span class="nav-links__text">Next Post</span>
-                        <div class="nav-links__thumb">
-                          <img
-                            src="/assets/img/products/street-fashion-9FCAD6F.jpg"
-                            alt="Next Post"
-                          />
-                        </div>
-                        <div class="nav-links__content">
-                          <h4 class="nav-links__title">Summer Night Party</h4>
-                          <span class="nav-links__meta"
-                            >August 29, 2021 - by Randy Snow</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </nav>
-                  <!-- Post Navigation Start Here -->
+                
 
-                  <!-- Comments Start Here -->
-                  <div class="comments-area">
-                    <div class="comment">
-                      <ul class="comment-list">
-                        <li>
-                          <div class="single-comment">
-                            <div class="comment-avatar">
-                              <img
-                                src="/assets/img/others/pexels-martin-péchy-2078265.jpg"
-                                alt="comment"
-                              />
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-meta">
-                                <h5 class="comment-author">
-                                  <a href="#">John Cena</a>
-                                </h5>
-                                <span class="comment-date"
-                                  >30 Janurary, 2020</span
-                                >
-                                <a href="" class="reply">Reply</a>
-                              </div>
-                              <div class="comment-content">
-                                <p>
-                                  enim ipsam voluptatem quia voluptas sit
-                                  aspernatur aut odit aut fugit, sed quia cntur
-                                  magn lores eos qui ratione voluptatem sequi
-                                  nesciunt. Neque porro
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <ul class="children">
-                            <li>
-                              <div class="single-comment">
-                                <div class="comment-avatar">
-                                  <img
-                                    src="/assets/img/others/pexels-matheus-bertelli-573299.jpg"
-                                    alt="comment"
-                                  />
-                                </div>
-                                <div class="comment-info">
-                                  <div class="comment-meta">
-                                    <h5 class="comment-author">
-                                      <a href="#">Admin</a>
-                                    </h5>
-                                    <span class="comment-date"
-                                      >19 Janurary, 2020</span
-                                    >
-                                    <a href="" class="reply">Reply</a>
-                                  </div>
-                                  <div class="comment-content">
-                                    <p>
-                                      enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit, sed quia
-                                      cntur magn lores eos qui ratione
-                                      voluptatem sequi nesciunt. Neque porro
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <div class="single-comment">
-                            <div class="comment-avatar">
-                              <img
-                                src="/assets/img/others/pexels-pixabay-415829.jpg"
-                                alt="comment"
-                              />
-                            </div>
-                            <div class="comment-info">
-                              <div class="comment-meta">
-                                <h5 class="comment-author">
-                                  <a href="#">Julia Rebeca</a>
-                                </h5>
-                                <span class="comment-date">30 April, 2021</span>
-                                <a href="" class="reply">Reply</a>
-                              </div>
-                              <div class="comment-content">
-                                <p>
-                                  enim ipsam voluptatem quia voluptas sit
-                                  aspernatur aut odit aut fugit, sed quia cntur
-                                  magn lores eos qui ratione voluptatem sequi
-                                  nesciunt. Neque porro
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="comment-respond">
-                      <h3 class="comment-reply-title">Leave a Reply</h3>
-                      <form action="#" class="form comment-form">
-                        <div class="form-notes mb--20">
-                          <p>
-                            <em
-                              >Your email address will not be published.
-                              Required fields are marked</em
-                            >
-                            <span class="required">*</span>
-                          </p>
-                        </div>
-                        <div class="form__group mb--30 mb-sm--20">
-                          <div class="row">
-                            <div class="col-md-4 mb-sm--20">
-                              <label
-                                class="form__label form__label--3"
-                                for="comment_name"
-                                >Name<span class="required">*</span></label
-                              >
-                              <input
-                                type="text"
-                                name="comment_name"
-                                id="comment_name"
-                                class="form__input"
-                              />
-                            </div>
-                            <div class="col-md-4 mb-sm--20">
-                              <label
-                                class="form__label form__label--3"
-                                for="comment_email"
-                                >Email<span class="required">*</span></label
-                              >
-                              <input
-                                type="email"
-                                name="comment_email"
-                                id="comment_email"
-                                class="form__input"
-                              />
-                            </div>
-                            <div class="col-md-4">
-                              <label
-                                class="form__label form__label--3"
-                                for="comment_website"
-                                >Website</label
-                              >
-                              <input
-                                type="url"
-                                name="comment_website"
-                                id="comment_website"
-                                class="form__input"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form__group mb--30 mb-sm--20">
-                          <div class="row">
-                            <div class="col-12">
-                              <label
-                                class="form__label form__label--3"
-                                for="review"
-                                >Your Review<span class="required"
-                                  >*</span
-                                ></label
-                              >
-                              <textarea
-                                name="review"
-                                id="review"
-                                class="form__input form__input--textarea"
-                              ></textarea>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form__group">
-                          <div class="row">
-                            <div class="col-12">
-                              <input
-                                type="submit"
-                                value="Submit Now"
-                                class="btn-submit"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <!-- Comments Start Here -->
+              
                 </div>
               </div>
               <div class="col-xl-3 col-lg-4 order-lg-1">
                 <div class="sidebar-inner">
                   <div class="widget blog-widget widget-categories mb--40">
-                    <h3 class="widget-title mb--25">Categories</h3>
-                    <ul class="widget-list category-list">
-                      <li>
-                        <a href="">
-                          <span>Cafe</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>Fashion</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>Furniture</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>Life Style</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>New Look</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>Photography</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>Technology</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="">
-                          <span>Travel</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="widget blog-widget widget-recent-posts mb--40">
-                    <h3 class="widget-title mb--25">Recent Post</h3>
-                    <div class="recent-post">
-                      <div class="recent-post__item">
-                        <div class="recent-post__thumb">
-                          <a href="/singlepostimage">
-                            <img
-                              src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </div>
-                        <div class="recent-post__content">
-                          <h3 class="recent-post__title text-truncate">
-                            <a href="/singlepostimage"
-                              >How I Edit My iPhone Photos</a
-                            >
-                          </h3>
-                          <span class="recent-post__meta"
-                            >September 15, 2018</span
-                          >
-                        </div>
-                      </div>
-                      <div class="recent-post__item">
-                        <div class="recent-post__thumb">
-                          <a href="/singlepostimage">
-                            <img
-                              src="/assets/img/products/street-fashion-9FCAD6F.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </div>
-                        <div class="recent-post__content">
-                          <h3 class="recent-post__title text-truncate">
-                            <a href="/singlepostimage">Summer Night Party</a>
-                          </h3>
-                          <span class="recent-post__meta"
-                            >September 15, 2018</span
-                          >
-                        </div>
-                      </div>
-                      <div class="recent-post__item">
-                        <div class="recent-post__thumb">
-                          <a href="/singlepostimage">
-                            <img
-                              src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </div>
-                        <div class="recent-post__content">
-                          <h3 class="recent-post__title text-truncate">
-                            <a href="/singlepostimage"
-                              >10 ways care your skin in home</a
-                            >
-                          </h3>
-                          <span class="recent-post__meta"
-                            >September 15, 2018</span
-                          >
-                        </div>
-                      </div>
-                      <div class="recent-post__item">
-                        <div class="recent-post__thumb">
-                          <a href="/singlepostimage">
-                            <img
-                              src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
-                              alt="Blog"
-                            />
-                          </a>
-                        </div>
-                        <div class="recent-post__content">
-                          <h3 class="recent-post__title text-truncate">
-                            <a href="/singlepostimage">Forever youth</a>
-                          </h3>
-                          <span class="recent-post__meta"
-                            >September 15, 2018</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="widget blog-widget widget-archive mb--40">
-                    <h3 class="widget-title mb--25">Archives</h3>
-                    <ul class="widget-list category-list">
-                      <li>
-                        <a href="/singlepostimage">
-                          <span>September 2018</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/singlepostimage">
-                          <span>August 2018</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="widget blog-widget widget-meta mb--40">
-                    <h3 class="widget-title mb--25">Meta</h3>
-                    <ul class="widget-list category-list">
-                      <li>
-                        <a href="/singlepostimage">
-                          <span>Site Admin</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="login-register.html">
-                          <span>Log out</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/singlepostimage">
-                          <span>Entries RSS</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/singlepostimage">
-                          <span>Comments RSS</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/singlepostimage">
-                          <span>WordPress.org</span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="widget blog-widget widget-tag">
                     <h3 class="widget-title mb--25">Tags</h3>
-                    <div class="tagcloud">
-                      <a href="/singlepostimage">Business</a>
-                      <a href="/singlepostimage">Creative</a>
-                      <a href="/singlepostimage">Strat-up</a>
-                    </div>
+                    <ul class="widget-list category-list">
+                      <% for(var i=0; i < result.tags.length; i++) { %>
+                      <li>
+                        <a href="/blog/<%= result.tags[i] %>">
+                          <span><%= result.tags[i] %></span>
+                          <i class="fa fa-angle-double-right"></i>
+                        </a>
+                      </li>
+
+                      <% } %>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -888,5 +395,20 @@
 
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
+    <script>
+      if (window.location.pathname.split("/")[1] == "singlepostimage") {
+        $.ajax({
+          url: `/singlepostimage/${window.location.pathname.split("/")[2]}?json=1`,
+          success: function (result) {
+            $("#blog-htmlview").html(result.result.rich_text_Editor);
+          },
+        });
+      }
+      $('.facebook').attr('href',`https://www.facebook.com/sharer/sharer.php?u=#${window.location.href}`);
+      $('.twitter').attr('href',`https://twitter.com/intent/tweet?url=${window.location.href}`);
+      $('.pinterest').attr('href',`https://www.facebook.com/sharer/sharer.php?u=#${window.location.href}`);
+
+      console.log("DDDDDDD", $(".blog-html-text").html());
+    </script>
   </body>
 </html>

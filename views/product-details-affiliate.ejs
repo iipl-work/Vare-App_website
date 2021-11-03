@@ -43,7 +43,7 @@
   <!-- Main Wrapper Start -->
   <div class="wrapper">
     <!-- Header Start -->
-    <%- include("partials/header2") %>
+    <%- include("partials/header2",menu) %>
       <!-- Header End -->
 
       <!-- Breadcrumb area Start -->
@@ -84,7 +84,7 @@
                                             }'>
                                             <% for(var i=0; i < 3; i++) { %>
                           <figure class="product-gallery__image zoom">
-                            <img height="500px" src="<%= image_url[0] %>" alt="Productss" />
+                            <img height="500px" src="<%= result.image_url[0] %>" alt="Productss" />
                             <div class="product-gallery__actions">
                               <button class="action-btn btn-zoom-popup">
                                 <i class="fa fa-eye"></i>
@@ -95,7 +95,7 @@
                           </figure>
                           <% } %>
                           <!-- <figure class="product-gallery__image zoom">
-                            <img height="500px" src="<%= image_url[0] %>" alt="Product" />
+                            <img height="500px" src="<%= result.image_url[0] %>" alt="Product" />
                             <div class="product-gallery__actions">
                               <button class="action-btn btn-zoom-popup">
                                 <i class="fa fa-eye"></i>
@@ -118,7 +118,7 @@
                           </figure>
                           <figure class="product-gallery__image zoom">
                             <img height="500px"
-                              src="<%= image_url[0] %>"
+                              src="<%= result.image_url[0] %>"
                               alt="Product" />
                             <div class="product-gallery__actions">
                               <button class="action-btn btn-zoom-popup">
@@ -175,7 +175,7 @@
                                         ]'>
                                         <% for(var i=0; i < 3; i++) { %>
                         <figure class="product-gallery__nav-image--single">
-                          <img src="<%= image_url[0] %>" alt="Products" />
+                          <img src="<%= result.image_url[0] %>" alt="Products" />
                         </figure>
                         <% } %>
                         <!-- <figure class="product-gallery__nav-image--single">
@@ -211,7 +211,7 @@
                     
                   </div>
                   <h3 class="product-title mb--20">
-                    <%= name %>
+                    <%= result.name %>
                   </h3>
                   <p class="product-short-description mb--20">
                     Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at
@@ -221,9 +221,9 @@
                     laoreet, feugiat tellus at, hendrerit arcu.
                   </p>
                   <div class="product-price-wrapper mb--25">
-                    <span class="money "><span class=" our-price price-format"><%= mrp %></span></span>
+                    <span class="money "><span class=" our-price price-format"><%= result.mrp %></span></span>
                     <span class="price-separator">-</span>
-                    <span class="money "> <span class=" mrp-strike mrp-price price-format"><%= ourprice %> </span></span>
+                    <span class="money "> <span class=" mrp-strike mrp-price price-format"><%= result.ourprice %> </span></span>
                 </div>
                 <form action="#" class="variation-form mb--20">
                   <div class="product-size-variations d-flex align-items-center mb--15">
@@ -255,10 +255,10 @@
               </form>
                   <!-- <div class="product-price-wrapper mb--30">
                     <span class="money">Mrp:
-                        <span class="price-format"><%= mrp %></span>
+                        <span class="price-format"><%= result.mrp %></span>
                     </span>
                     <span class="money">Our Price:
-                      <span class="price-format"><%= ourprice %> </span>
+                      <span class="price-format"><%= result.ourprice %> </span>
                     </span>
                     <br>
                     
@@ -411,7 +411,7 @@
                         <figure class="product-image">
                           <a href="/shopproduct">
                             <img
-                              src="<%= image_url[0] %>"
+                              src="<%= result.image_url[0] %>"
                               alt="Products" />
                           </a>
                           <div class="zakas-product-action">

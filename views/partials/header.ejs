@@ -11,7 +11,11 @@
         <div class="col-sm-2 order-sm-2 order-first mb-xs--40 text-center">
           <a href="/" class="logo">
             <figure class="logo--normal">
-              <img style=" width:55px" src="/assets/img/logo/asset4.png" alt="Logo" />
+              <img
+                style="width: 55px"
+                src="/assets/img/logo/asset4.png"
+                alt="Logo"
+              />
             </figure>
             <figure class="logo--transparent">
               <img width="65px" src="/assets/img/logo/asset9.png" alt="Logo" />
@@ -43,33 +47,34 @@
             </a>
           </li>
           <li class="menu-item-has-children">
-            <a href="#">
+            <a href="blog.html">
               <span class="mm-text">Vare Shop</span>
             </a>
             <ul class="sub-menu">
-              <li class="menu-item-has-children">
-                <a href="/shopnow">
-                  <span class="mm-text">Women Ethnic Wear</span>
+              <% for(var i=0; i < menu.length; i++) { %>
+              <li class="menu-item-has-children has-children">
+                <a href="#">
+                  <span class="mm-text"><%= menu[i].parent %></span>
                 </a>
+                <ul class="sub-menu">
+                  <% for(var j=0; j < menu[i].items.length; j++) { %>
+                    <% for(var k=0; k < menu[i].items[j].items.length; k++) { %>
+                  <li>
+                    <a href="blog.html">
+                      <span class="mm-text"><%= menu[i].items[j].items[k].name %></span>
+                    </a>
+                  </li>
+                  <% } %>
+                  <% } %>
+                </ul>
               </li>
-            </ul>
-            <ul class="sub-menu">
-              <li class="menu-item-has-children">
-                <a href="/shopnow">
-                  <span class="mm-text">Men Ethnic Wear</span>
-                </a>
-              </li>
-            </ul>
-            <ul class="sub-menu">
-              <li class="menu-item-has-children">
-                <a href="/shopnow">
-                  <span class="mm-text">Kids Ethnic Wear</span>
-                </a>
-              </li>
+              <% } %>
             </ul>
           </li>
+
+          
           <li class="menu-item-has-children">
-            <a href="/blog">
+            <a href="/blog/all">
               <span class="mm-text">Blog</span>
             </a>
           </li>
@@ -78,7 +83,6 @@
               <span class="mm-text">Contact Us</span>
             </a>
           </li>
-
         </ul>
       </nav>
     </div>
