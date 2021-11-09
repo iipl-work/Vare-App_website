@@ -114,6 +114,8 @@ app.get("/menu", (req, res) => {
       });
   });
 });
+
+//query params:category,pageNo,serach
 app.get("/shopnow", async (req, res) => {
   // var menu = [];
 
@@ -187,7 +189,10 @@ app.get("/shopnow", async (req, res) => {
   // //   });
   // // });
   var pageNo=1;
-
+if(req.query.pageNo!=undefined)
+{
+  pageNo=req.query.pageNo;
+}
 var menu=await getMenu();
 
 var data = JSON.stringify({
@@ -310,7 +315,10 @@ app.get("/login-register", (req, res) => {
 });
 app.get("/blog", async (req, res) => {
   var pageNo=1;
-
+  if(req.query.pageNo!=undefined)
+  {
+    pageNo=req.query.pageNo;
+  }
 var menu=await getMenu();
 
 var data = JSON.stringify({
