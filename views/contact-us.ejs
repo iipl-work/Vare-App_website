@@ -65,9 +65,16 @@
         </div>
       </div>
       <!-- Breadcrumb area End -->
-
-      <!-- Main Content Wrapper Start -->
       <div id="content" class="main-content-wrapper">
+        <div class="page-content-inner pt--75">
+          <div class="container">
+            <div id="page-htmlview"></div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- Main Content Wrapper Start -->
+      <div id="content" class="main-content-wrapper d-none" >
         <div class="page-content-inner pt--75">
           <div class="container">
             <div class="row pb--80">
@@ -480,5 +487,16 @@
 
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
+
+    <script>
+      if (window.location.pathname.split("/")[1] == "contact") {
+       $.ajax({
+         url: `/contact?json=1`,
+         success: function (result) {
+           $("#page-htmlview").html(result.data.data);
+         },
+       });
+     }
+   </script>
   </body>
 </html>

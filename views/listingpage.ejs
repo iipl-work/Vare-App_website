@@ -92,57 +92,20 @@
                                     </div>
                                 </div>
                                 <div class="shop-products">
-                                    
+                                    <% if(!data.status) {%>
+                                      <span style="font-size: 3rem;" class="row justify-content-center">  <%= data.message %></span>
+                                     <% } else { %>   
                                     <div class="row">
-                                        <% for(var i=0; i < data.length; i++) { %>
+                                        <% for(var i=0; i < data.data.length; i++) { %>
                                             <div class="col-xl-3 col-lg-4 col-sm-6 mb--50">
                                                 <div class="zakas-product">
                                                     <div class="product-inner">
                                                         <figure class="product-image">
-                                                            <a href="/shopproduct/<%= data[i].productId %>">
+                                                            <a href="/shopproduct/<%= data.data[i].productId %>">
 
-                                                                <img src="<%= data[i].image_url[0] %>" alt="Products">
+                                                                <img src="<%= data.data[i].image_url[0] %>" alt="Products">
                                                             </a>
-                                                            <!-- <div class="zakas-product-action">
-                                                                <div class="product-action d-flex">
-                                                                   
-                                                                    <div class="product-size">
-                                                                        <a href="" class="action-btn">
-                                                                            <span class="current">
-                                                                                <%= data[i].brandsize %>
-                                                                            </span>
-                                                                        </a>
-                                                                        <div class="product-size-swatch">
-                                                                            <span class="product-size-swatch-btn variation-btn">
-                                                                                L
-                                                                            </span>
-                                                                            <span class="product-size-swatch-btn variation-btn">
-                                                                                M
-                                                                            </span>
-                                                                            <span class="product-size-swatch-btn variation-btn">
-                                                                                S
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-color">
-                                                                        <a href="" class="action-btn">
-                                                                            <%= data[i].brandcolor %>
-                                                                        </a>
-                                                                        <div class="product-color-swatch">
-                                                                            <span class="product-color-swatch-btn blue variation-btn">
-                                                                                Blue
-                                                                            </span>
-                                                                            <span class="product-color-swatch-btn copper variation-btn">
-                                                                                Copper
-                                                                            </span>
-                                                                            <span class="product-color-swatch-btn old-rose variation-btn">
-                                                                                Old Rose
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div> -->
+                                                         
                                                             <% if (i % 2 == 0) { %>
                                                             <span class="product-badge">New</span>
                                                             <% } %>
@@ -151,21 +114,24 @@
                                                             <h3 class="product-title mb--10" style="text-transform: capitalize;white-space: nowrap;
                                                             text-overflow: ellipsis;
                                                             overflow: hidden;">
-                                                                <a href="/shopproduct/<%= data[i].productId %>" >
-                                                                    <%= data[i].name %> 
+                                                                <a href="/shopproduct/<%= data.data[i].productId %>" >
+                                                                    <%= data.data[i].name %> 
                                                                 </a>
                                                             </h3>
                                                             <div class="product-price-wrapper mb--15">
-                                                                <span class="money">  <span class="our-price price-format" >  <%= data[i].ourprice %> </span></span>
+                                                                <span class="money">  <span class="our-price price-format" >  <%= data.data[i].ourprice %> </span></span>
                                                                 <span class="money-separator">-</span>
-                                                                <span class="money"> <span class="mrp-strike price-format mrp-price">  <%= data[i].mrp %> </span></span>
+                                                                <span class="money"> <span class="mrp-strike price-format mrp-price">  <%= data.data[i].mrp %> </span></span>
                                                             </div>
                                                             <div class="product-brand mb--15">
                                                                                                                    
                                                                 <span class="vare-brand">Brand :
-                                                                    <%= data[i].brand %>
+                                                                    <%= data.data[i].brand %>
                                                                 </span>
                                                             </div>
+                                                            
+                                                            
+                                                            
                                                             <a href="#"
                                                                 class="btn btn-small btn-bg-sand btn-color-dark">Buy in
                                                                 App</a>
@@ -256,14 +222,13 @@
                                             </div>
                                             <% } %>
                                     </div>
+                                    <% } %>
                                 </div>
                                 <nav class="pagination-wrap">
                                     <ul class="pagination">
-                                        <li><a href="#" class="prev page-number"><i class="fa fa-angle-double-left"></i></a></li>
-                                        <li><span class="current page-number">1</span></li>
-                                        <li><a href="#" class="page-number">2</a></li>
-                                        <li><a href="#" class="page-number">3</a></li>
-                                        <li><a href="#" class="next page-number"><i class="fa fa-angle-double-right"></i></a></li>
+                                        <li><a href="javascript:prevPage();" class="prev page-number" id="btn_prev"><i class="fa fa-angle-double-left"></i></a></li>
+                                        <li><span class="current page-number" id="page">1</span></li>
+                                        <li><a href="javascript:nextPage();" class="next page-number" id="btn_next"><i class="fa fa-angle-double-right"></i></a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -484,6 +449,86 @@
                 <script src="/assets/js/main.js"></script>
                   <!-- Custom JS -->
                   <script src="/assets/js/custom.js"></script>
+
+                  <script>
+                      var current_page = window.location.href.split('?')[1].split('&&')[0].split('=')[1];
+                        var records_per_page = 10;
+                        // console.log('@{model.limit}',"LIMIT");
+                        var objJson;
+                      
+                        // Can be obtained from another source, such as your objJson variable
+                        objJson = {  length:  '<%= data.pages %>'*10   };
+                        function prevPage() {
+                            if (current_page > 1) {
+                                current_page--;
+                                changePage(current_page);
+                                window.location.href = `?pageNo=${current_page}&&${window.location.href.split('?')[1].split('&&')[1]}`;
+                            }
+                        }
+
+                        function nextPage() {
+                            console.log("::::::::::", current_page, numPages());
+                            if (current_page < numPages()) {
+                                current_page++;
+                                changePage(current_page);
+                                window.location.href = `?pageNo=${current_page}&&${window.location.href.split('?')[1].split('&&')[1]}`;
+                            }
+                        }
+
+                        function changePage(page) {
+                            var btn_next = document.getElementById("btn_next");
+                            var btn_prev = document.getElementById("btn_prev");
+                            var page_span = document.getElementById("page");
+                            console.log(page, "COMA", numPages(), "KKKKKKK");
+                            // Validate page
+                            if (page < 1) page = 1;
+                            if (page > numPages()) page = numPages();
+
+
+                            // for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
+                            // 	listing_table.innerHTML += objJson[i].adName + "<br>";
+                            // }
+                            page_span.innerHTML = page;
+
+                            if (page == 1) {
+                                btn_prev.style.visibility = "hidden";
+                            } else {
+                                btn_prev.style.visibility = "visible";
+                            }
+                            // $('#btn_next').html('>');
+                            // $('#btn_prev').html('<');
+                           
+                            if (page == numPages()) {
+                                btn_next.style.visibility = "hidden";
+
+                            } else {
+                                btn_next.style.visibility = "visible";
+                            }
+                            if (numPages() == 0) {
+                                $('.paginations').hide();
+                            } else {
+                                $('.paginations').show();
+                            }
+                        }
+
+                        function numPages() {
+                            console.log("OBJ LENGTH",objJson.length,"Records per page", records_per_page);
+                            return Math.ceil(objJson.length / records_per_page);
+                        }
+                                
+                                
+                        $(document).ready(function () {
+
+                            console.log(current_page,"CURRENT");
+                            if (objJson.length == 0 || objJson.length == '0') {
+                                $('.pagination-wrap').hide();
+                            } else {
+                                changePage(current_page);
+                            }
+                            
+                           
+                        });
+                </script>
 
 </body>
 
