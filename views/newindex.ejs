@@ -61,8 +61,9 @@
                     "autoplay": true
                 }'
           >
+          <% for(var i=0; i < result.data[0].childTile.length; i++) { %>
             <div  class="  single-slide slider-height-2  bg-style   d-flex   align-items-center  "
-              style=" background-image: url(/assets/img/products/glamour-fashion-model-RNACDHN.JPG);  " >
+              style=" background-image: url('<%=  result.data[0].childTile[i].imgUrl %>');  " >
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-12">
@@ -79,18 +80,18 @@
                           data-animation="fadeInUp"
                           data-duration=".4s"
                           data-delay=".7s"
-                          >#Vare Styles</span
+                          ><%=  result.data[0].childTile[i].text %></span
                         >
                         <span
                           class="heading__primary--main"
                           data-animation="fadeInUp"
                           data-duration=".4s"
                           data-delay="1s"
-                          >2021</span
+                          ><%=  result.data[0].childTile[i].subText %></span
                         >
                       </h1>
                       <a
-                        href="/shopnow"
+                        href="<%=  result.data[0].childTile[i].hyperLink %>"
                         class="btn"
                         data-animation="fadeInUp"
                         data-duration=".4s"
@@ -102,57 +103,7 @@
                 </div>
               </div>
             </div>
-            <div
-              class="
-                single-slide
-                slider-height-2
-                bg-style
-                d-flex
-                align-items-center
-              "
-              style="
-                background-image: url(/assets/img/products/glamour-fashion-model-RNACDHN.JPG);
-              "
-            >
-              <div class="container">
-                <div class="row justify-content-center">
-                  <div class="col-12">
-                    <div class="slider-content text-center ptb--100">
-                      <h1
-                        class="
-                          heading__primary heading__primary--2
-                          color--white
-                          mb--30
-                        "
-                      >
-                        <span
-                          class="heading__primary--sub"
-                          data-animation="fadeInUp"
-                          data-duration=".4s"
-                          data-delay=".7s"
-                          >#Vare Styledd</span
-                        >
-                        <span
-                          class="heading__primary--main"
-                          data-animation="fadeInUp"
-                          data-duration=".4s"
-                          data-delay="1s"
-                          >2021</span
-                        >
-                      </h1>
-                      <a
-                        href="/shopnow"
-                        class="btn"
-                        data-animation="fadeInUp"
-                        data-duration=".4s"
-                        data-delay="1.2s"
-                        >Shop Now <i class="fa fa-angle-double-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <% } %>
           </div>
         </section>
         <!-- Slider area End -->
@@ -173,7 +124,7 @@
                   >
                     <figure class="banner-image">
                       <img
-                        src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
+                        src="<%=  result.data[1].imgUrl %>"
                         alt="Banner"
                       />
                     </figure>
@@ -181,9 +132,9 @@
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            >Perfect Collection</span
+                            ><%=  result.data[1].text %></span
                           >
-                          <span class="heading__primary--main">For Women</span>
+                          <span class="heading__primary--main"><%=  result.data[1].subText %></span>
                         </h2>
                         <!-- <a
                           href="/shopnow"
@@ -193,7 +144,7 @@
                           data-delay="1.2s"
                           >Shop Now s<i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="/shopnow" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a href="<%=  result.data[1].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -212,7 +163,7 @@
                   >
                     <figure class="banner-image">
                       <img
-                        src="/assets/img/products/street-fashion-9FCAD6F.jpg"
+                        src="<%=  result.data[2].imgUrl %>"
                         alt="Banner"
                       />
                     </figure>
@@ -220,9 +171,9 @@
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            >Perfect Accesories</span
+                            ><%=  result.data[2].text %></span
                           >
-                          <span class="heading__primary--main">For Women</span>
+                          <span class="heading__primary--main"><%=  result.data[2].subText %></span>
                         </h2>
                         <!-- <a
                           href="/shopnow"
@@ -232,7 +183,7 @@
                           data-delay="1.2s"
                           >Shop Now <i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="/shopnow" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a href="<%=  result.data[2].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -248,7 +199,7 @@
         <div
           class="full-width-banner-area parallax-window"
           data-parallax="scroll"
-          data-image-src="/assets/img/products/portrait-fashionable-woman-street-fashion-2EGQRTL.jpg"
+          data-image-src="<%=  result.data[3].imgUrl %>"
         ></div>
         <!-- Full Width Banner Area End -->
 
@@ -268,7 +219,7 @@
                   >
                     <figure class="banner-image">
                       <img
-                        src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg"
+                        src="<%=  result.data[4].imgUrl %>"
                         alt="Banner"
                       />
                     </figure>
@@ -276,10 +227,10 @@
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            >Orange Blazer</span
+                            ><%=  result.data[4].text %></span
                           >
                           <span class="heading__primary--main"
-                            >Winter Shop</span
+                            ><%=  result.data[4].subText %></span
                           >
                         </h2>
                         <!-- <a
@@ -290,7 +241,7 @@
                           data-delay="1.2s"
                           >Shop Now <i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="/shopnow" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a href="<%=  result.data[4].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -310,7 +261,7 @@
                     <figure class="banner-image">
                       <img
                         height="auto"
-                        src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
+                        src="<%=  result.data[5].imgUrl %>"
                         alt="Banner"
                       />
                     </figure>
@@ -318,9 +269,9 @@
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            >Perfect Accesories</span
+                            ><%=  result.data[5].text %></span
                           >
-                          <span class="heading__primary--main">For Women</span>
+                          <span class="heading__primary--main"><%=  result.data[5].subText %></span>
                         </h2>
                         <!-- <a
                           href="/shopnow"
@@ -330,7 +281,7 @@
                           data-delay="1.2s"
                           >Shop Now <i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="/shopnow" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a href="<%=  result.data[5].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>

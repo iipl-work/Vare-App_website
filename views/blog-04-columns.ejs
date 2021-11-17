@@ -22,6 +22,15 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+      .blog-media .image a img {
+        height: 250px;
+    margin: 0 0 18px;
+    object-fit: scale-down;
+    transform: scale(1);
+    transition-duration: 0.4s;
+      }
+    </style>
   </head>
 
   <body>
@@ -87,8 +96,8 @@
                         <figure class="image">
                           <a href="/singlepostimage/<%= data.data[i]._id %>">
                             <img
-                              height="300px"rich_text_Editor
-                              src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
+                              height="300px" rich_text_Editor
+                              src="<%= data.data[i].coverimage %>"
                               alt="Blog"
                             />
                           </a>

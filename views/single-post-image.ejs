@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title>Vare APP Single Product</title>
+    <title>Vare APP Blog</title>
     <meta name="description" content="" />
     <meta
       name="viewport"
@@ -21,6 +21,16 @@
 
     <!-- style css -->
     <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <style>
+      .blog-media .image a img {
+        height: 250px;
+    margin: 0 0 18px;
+    object-fit: scale-down;
+    transform: scale(1);
+    transition-duration: 0.4s;
+      }
+    </style>
   </head>
 
   <body>
@@ -47,7 +57,14 @@
       <%- include("partials/header2",menu) %>
 
       <!-- Breadcrumb area Start -->
-      <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
+      <% if(result != null) {%>
+      <div class="breadcrumb-area bg-color ptb--90" style="background-image: url('<%= result.coverimage %>');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #cccccc;
+      height: 250px
+  ;">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -59,12 +76,13 @@
                   flex-sm-row flex-column
                 "
               >
-                <h1 class="page-title">Vare Blog Post</h1>
+                <!-- <h1 class="page-title">Vare Blog Post</h1> -->
               </div>
             </div>
           </div>
         </div>
       </div>
+      <% } %>
       <!-- Breadcrumb area End -->
 
       <!-- Main Content Wrapper Start -->
@@ -72,6 +90,7 @@
         <div class="page-content-inner ptb--80">
           <div class="container">
             <div class="row mb--75">
+              <% if(result != null) {%>
               <div class="col-lg-8 col-xl-9 order-lg-2 mb-md--50">
                 <div class="single-post">
                   <!-- Single Blog Start Here -->
@@ -86,8 +105,7 @@
                         <a href="/singlepostimage">Life Style</a>
                       </div>
                     </div>
-                  
-                  
+
                     <div id="blog-htmlview"></div>
                     <div class="entry-footer-meta">
                       <div class="tag-list">
@@ -95,16 +113,23 @@
                           <i class="fa fa-tags"></i>
                         </span>
                         <span>
-                          <a href="/singlepostimage">Business</a>,
-                          <a href="/singlepostimage">Creative</a>,
-                          <a href="/singlepostimage">Start-up</a>
+                         
+                          <% for(var i=0; i < result.tags.length; i++) { %>
+
+                          <a href="/blog/<%= result.tags[i] %>">
+                            <span><%= result.tags[i] %></span>
+                            <i class="fa fa-angle-double-right"></i>
+                          </a>
+                          <% if(result.tags.length > 1) { %>
+                            <% if(result.tags.length-1 != i) { %>
+                            ,   
+                                                       
+                            <%} %> 
+                         <%} %> 
+                        <% } %>
                         </span>
                       </div>
-                      <div class="author">
-                        <span>
-                          Author: <a href="/singlepostimage">John Snow</a>
-                        </span>
-                      </div>
+                      
                     </div>
                   </article>
                   <!-- Single Blog End Here -->
@@ -155,27 +180,24 @@
                     </ul>
                   </div>
                   <!-- Social Sharing Icons End Here -->
-
-                
-
-              
                 </div>
-              </div>
+              </div> <% }else { %>
+                <div class="col-lg-8 col-xl-9 order-lg-2 mb-md--50">
+                  <div class="single-post">
+                    <!-- Single Blog Start Here -->
+                    <article class="single-post-details">
+                      <div class="entry-header">
+                        <h2 class="entry-title">No Blog</h2>
+                      </div></article>
+                      </div>
+                      </div>
+            
+                        <% }%>
               <div class="col-xl-3 col-lg-4 order-lg-1">
                 <div class="sidebar-inner">
                   <div class="widget blog-widget widget-categories mb--40">
                     <h3 class="widget-title mb--25">Tags</h3>
-                    <ul class="widget-list category-list">
-                      <% for(var i=0; i < result.tags.length; i++) { %>
-                      <li>
-                        <a href="/blog/<%= result.tags[i] %>">
-                          <span><%= result.tags[i] %></span>
-                          <i class="fa fa-angle-double-right"></i>
-                        </a>
-                      </li>
-
-                      <% } %>
-                    </ul>
+                    <ul class="widget-list category-list" id="cat-list"></ul>
                   </div>
                 </div>
               </div>
@@ -187,168 +209,8 @@
                     <h2 class="heading__secondary">Related Post</h2>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div
-                      class="zakas-element-carousel nav-vertical-center"
-                      data-slick-options='{
-                                        "spaceBetween": 30,
-                                        "slidesToShow": 3,
-                                        "slidesToScroll": 1,
-                                        "arrows": true,
-                                        "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-double-left" },
-                                        "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-double-right" }
-                                    }'
-                      data-slick-responsive='[
-                                        {"breakpoint":1199, "settings": {
-                                            "slidesToShow": 2
-                                        }},
-                                        {"breakpoint":575, "settings": {
-                                            "slidesToShow": 1
-                                        }}
-                                    ]'
-                    >
-                      <div class="item">
-                        <article class="blog">
-                          <div class="blog-media">
-                            <figure class="image">
-                              <a href="/singlepostimage">
-                                <img
-                                  src="/assets/img/products/fashion-model-in-stylish-snake-image-FZRQQTP.jpg"
-                                  alt="Blog"
-                                />
-                              </a>
-                            </figure>
-                          </div>
-                          <div class="blog-info">
-                            <h2 class="blog-title">
-                              <a href="/singlepostimage"
-                                >She Belived She Could</a
-                              >
-                            </h2>
-                            <div class="blog-meta">
-                              <div class="blog-meta--left">
-                                <a
-                                  href="/singlepostimage"
-                                  class="blog-meta-btn"
-                                >
-                                  <i class="fa fa-comment-o"></i>
-                                  <sup>05</sup>
-                                </a>
-                                <a
-                                  href="/singlepostimage"
-                                  class="blog-meta-btn"
-                                >
-                                  <i class="fa fa-heart-o"></i>
-                                  <sup>06</sup>
-                                </a>
-                              </div>
-                              <div class="blog-meta--right">
-                                <a
-                                  href="/singlepostimage"
-                                  class="btn btn-no-bg btn-color-dark"
-                                  >Read More
-                                  <i class="fa fa-angle-double-right"></i
-                                ></a>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="item">
-                        <article class="blog">
-                          <div class="blog-media">
-                            <figure class="image">
-                              <a href="/singlepostimage">
-                                <img
-                                  src="/assets/img/products/beautiful-fashion-model-CFR52B7.jpg"
-                                  alt="Blog"
-                                />
-                              </a>
-                            </figure>
-                          </div>
-                          <div class="blog-info">
-                            <h2 class="blog-title">
-                              <a href="/singlepostimage">Monday to Sunday</a>
-                            </h2>
-                            <div class="blog-meta">
-                              <div class="blog-meta--left">
-                                <a
-                                  href="/singlepostimage"
-                                  class="blog-meta-btn"
-                                >
-                                  <i class="fa fa-comment-o"></i>
-                                  <sup>05</sup>
-                                </a>
-                                <a
-                                  href="/singlepostimage"
-                                  class="blog-meta-btn"
-                                >
-                                  <i class="fa fa-heart-o"></i>
-                                  <sup>06</sup>
-                                </a>
-                              </div>
-                              <div class="blog-meta--right">
-                                <a
-                                  href="/singlepostimage"
-                                  class="btn btn-no-bg btn-color-dark"
-                                  >Read More
-                                  <i class="fa fa-angle-double-right"></i
-                                ></a>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="item">
-                        <article class="blog">
-                          <div class="blog-media">
-                            <figure class="image">
-                              <a href="/singlepostimage">
-                                <img
-                                  src="/assets/img/products/street-fashion-9FCAD6F.jpg"
-                                  alt="Blog"
-                                />
-                              </a>
-                            </figure>
-                          </div>
-                          <div class="blog-info">
-                            <h2 class="blog-title">
-                              <a href="/singlepostimage"
-                                >Trade Show Promotions</a
-                              >
-                            </h2>
-                            <div class="blog-meta">
-                              <div class="blog-meta--left">
-                                <a
-                                  href="/singlepostimage"
-                                  class="blog-meta-btn"
-                                >
-                                  <i class="fa fa-comment-o"></i>
-                                  <sup>05</sup>
-                                </a>
-                                <a
-                                  href="/singlepostimage"
-                                  class="blog-meta-btn"
-                                >
-                                  <i class="fa fa-heart-o"></i>
-                                  <sup>06</sup>
-                                </a>
-                              </div>
-                              <div class="blog-meta--right">
-                                <a
-                                  href="/singlepostimage"
-                                  class="btn btn-no-bg btn-color-dark"
-                                  >Read More
-                                  <i class="fa fa-angle-double-right"></i
-                                ></a>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                    </div>
-                  </div>
+                <div class="row " id="related-blogs">
+   
                 </div>
               </div>
             </div>
@@ -396,19 +258,109 @@
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
     <script>
+      $('.hide-temp').hide();
       if (window.location.pathname.split("/")[1] == "singlepostimage") {
         $.ajax({
-          url: `/singlepostimage/${window.location.pathname.split("/")[2]}?json=1`,
+          url: `/singlepostimage/${
+            window.location.pathname.split("/")[2]
+          }?json=1`,
           success: function (result) {
             $("#blog-htmlview").html(result.result.rich_text_Editor);
           },
         });
       }
-      $('.facebook').attr('href',`https://www.facebook.com/sharer/sharer.php?u=#${window.location.href}`);
-      $('.twitter').attr('href',`https://twitter.com/intent/tweet?url=${window.location.href}`);
-      $('.pinterest').attr('href',`https://www.facebook.com/sharer/sharer.php?u=#${window.location.href}`);
+      $(".facebook").attr(
+        "href",
+        `https://www.facebook.com/sharer/sharer.php?u=#${window.location.href}`
+      );
+      $(".twitter").attr(
+        "href",
+        `https://twitter.com/intent/tweet?url=${window.location.href}`
+      );
+      $(".pinterest").attr(
+        "href",
+        `https://www.facebook.com/sharer/sharer.php?u=#${window.location.href}`
+      );
 
-      console.log("DDDDDDD", $(".blog-html-text").html());
+      var settings = {
+        url: "https://k6u06d3vrf.execute-api.ap-south-1.amazonaws.com/dev/api/blog/tags",
+        method: "POST",
+        timeout: 0,
+        headers: {
+          "x-user-auth":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjkxOTcwMzIyMDk3NCIsInVzZXJJZCI6ImQzNmNlZDIwLTFkYjUtMTFlYy1hZmIwLWMzYzkzYzc4ZThmMyIsInZlbmRvcklkIjoiZTI3YWFmOTAtMjBlYS0xMWVjLWFjNzQtODkzMWZiOWIzMDYyIiwiaWF0IjoxNjM2MDk4MjkwLCJleHAiOjE2NTE2NTAyOTB9.AACiM1LpK0BWr1idSTn276mrbX78pDvutFxExxEGZ6I",
+        },
+      };
+
+      $.ajax(settings).done(function (response) {
+        if (response.status) {
+          for (let i = 0; i < response.data.length; i++) {
+            const element = response.data[i];
+            $("#cat-list").append(`
+          <li>
+                        <a href="/singlepostimage/${element._id}">
+                          <span>${element.tag}</span>
+                          <i class="fa fa-angle-double-right"></i>
+                        </a>
+                      </li>
+          `);
+          }
+        }
+      });
+
+      var settings = {
+        url: "https://k6u06d3vrf.execute-api.ap-south-1.amazonaws.com/dev/api/blog/latestblogs",
+        method: "POST",
+        timeout: 0,
+        headers: {
+          "x-user-auth":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjkxOTcwMzIyMDk3NCIsInVzZXJJZCI6ImQzNmNlZDIwLTFkYjUtMTFlYy1hZmIwLWMzYzkzYzc4ZThmMyIsInZlbmRvcklkIjoiZTI3YWFmOTAtMjBlYS0xMWVjLWFjNzQtODkzMWZiOWIzMDYyIiwiaWF0IjoxNjM2MDk4MjkwLCJleHAiOjE2NTE2NTAyOTB9.AACiM1LpK0BWr1idSTn276mrbX78pDvutFxExxEGZ6I",
+        },
+      };
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        if (response.status) {
+          for (let i = 0; i < response.data.length; i++) {
+            const element = response.data[i];
+            $("#related-blogs").append(`
+              <div class="item col-xl-4 col-lg-4 col-md-6">
+                        <article class="blog">
+                          <div class="blog-media">
+                            <figure class="image">
+                              <a href="/singlepostimage/${element._id}">
+                                <img  src="${element.coverimage}"
+                                  alt="Blog"
+                                />
+                              </a>
+                            </figure>
+                          </div>
+                          <div class="blog-info">
+                            <h5 class="blog-title" style="font-size:15px">
+                              <a href="/singlepostimage/${element._id}"
+                                >${element.title}</a
+                              >
+                            </h5>
+                            <div class="blog-meta">
+                            
+                              <div class="blog-meta--right">
+                                <a
+                                  href="/singlepostimage/${element._id}"
+                                  class="btn btn-no-bg btn-color-dark"
+                                  >Read More
+                                  <i class="fa fa-angle-double-right"></i
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+        `);
+
+          }
+          $('.hide-temp').show();
+        }
+      });
     </script>
   </body>
 </html>

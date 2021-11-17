@@ -60,7 +60,7 @@
                   <% for(var j=0; j < menu[i].items.length; j++) { %>
                     <% for(var k=0; k < menu[i].items[j].items.length; k++) { %>
                   <li>
-                    <a href="blog.html">
+                    <a href="/shopnow?pageNo=1&&category=<%= menu[i].items[j].items[k].name %>">
                       <span class="mm-text"><%= menu[i].items[j].items[k].name %></span>
                     </a>
                   </li>
@@ -74,7 +74,7 @@
 
           
           <li class="menu-item-has-children">
-            <a href="/blog/all">
+            <a href="/blog">
               <span class="mm-text">Blog</span>
             </a>
           </li>
