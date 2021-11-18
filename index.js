@@ -411,6 +411,7 @@ async function getMenu() {
     submenu.ischild = sublist.length > 0 ? true : false;
 
     submenu.parent = result[i].id;
+    submenu.parentName = result[i].name;
     // console.log("iiiiiiiiii-------", sublist);
     for (var j = 0; j < sublist.length; j++) {
       // console.log("jjjjjjj-------", sublist[j]);
@@ -423,7 +424,7 @@ async function getMenu() {
       sub2menu.items = sub2list;
       sub2menu.ischild = sub2list.length > 0 ? true : false;
       sub2menu.parent = sublist[j].id;
-
+      sub2menu.parentNmae = sublist[j].name;
       submenu.items.push(sub2menu);
     }
     menu.push(submenu);
