@@ -22,7 +22,7 @@
             </figure>
           </a>
         </div>
-        <div class="col-sm-5 col-10 order-sm-3 text-end">
+        <!-- <div class="col-sm-5 col-10 order-sm-3 text-end">
           <ul class="header-toolbar white-color">
             <li class="header-toolbar__item">
               <a href="#searchForm" class="header-toolbar__btn toolbar-btn">
@@ -30,7 +30,7 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -54,13 +54,13 @@
               <% for(var i=0; i < menu.length; i++) { %>
               <li class="menu-item-has-children has-children">
                 <a href="#">
-                  <span class="mm-text"><%= menu[i].parent %></span>
+                  <span class="mm-text"><%= menu[i].parentName %></span>
                 </a>
                 <ul class="sub-menu">
                   <% for(var j=0; j < menu[i].items.length; j++) { %>
                     <% for(var k=0; k < menu[i].items[j].items.length; k++) { %>
                   <li>
-                    <a href="/shopnow?pageNo=1&&category=<%= menu[i].items[j].items[k].name %>">
+                    <a href="/shopnow?pageNo=1&&category=<%= menu[i].items[j].items[k].id %>">
                       <span class="mm-text"><%= menu[i].items[j].items[k].name %></span>
                     </a>
                   </li>
