@@ -22,14 +22,14 @@
                             <ul class="mainmenu">
                                 <% for(var i=0; i < menu.length; i++) { %>
                                 <li class="mainmenu__item menu-item-has-children active">
-                                    <a href="index.html" class="mainmenu__link">
+                                    <a href="javascript:void(0)" class="mainmenu__link" style="cursor: default;">
                                         <span class="mm-text"><%= menu[i].parentName %></span>
                                     </a>
                                     <ul class="megamenu two-column">
                                         <% for(var j=0; j < menu[i].items.length; j++) { %>
                                         <li>
-                                            <a class="megamenu-title" href="#">
-                                                <span class="mm-text"><%= menu[i].items[j].parentNmae %></span>
+                                            <a class="megamenu-title" href="javascript:void(0)" style="cursor: default;">
+                                                <span class="mm-text" style="cursor: default;"><%= menu[i].items[j].parentNmae %></span>
                                             </a>
                                             <ul>
                                                 <% for(var k=0; k < menu[i].items[j].items.length; k++) { %>
