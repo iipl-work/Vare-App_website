@@ -2,12 +2,32 @@ let express = require("express");
 let app = express();
 var path = require("path");
 var axios = require("axios");
+var mcache = require('memory-cache');
+
+
 var MongoClient = require("mongodb").MongoClient;
 var url =
   "mongodb+srv://sowmya:iNNrxOhVfEdvsUaI@vare.cnw2n.mongodb.net/vare?retryWrites=true&w=majority";
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 const { ObjectId } = require("mongodb");
+
+app.use(function(req, res, next){
+   let key = '__express__' + req.originalUrl || req.url
+    let cachedBody = mcache.get(key)
+    if (cachedBody) {
+      res.send(cachedBody)
+      return
+    } else {
+      res.sendResponse = res.send
+      res.send = (body) => {
+        mcache.put(key, body, 20 * 1000);
+        res.sendResponse(body)
+      }
+      next()
+    }
+})
+
 var token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjkxOTcwMzIyMDk3NCIsInVzZXJJZCI6ImQzNmNlZDIwLTFkYjUtMTFlYy1hZmIwLWMzYzkzYzc4ZThmMyIsInZlbmRvcklkIjoiZTI3YWFmOTAtMjBlYS0xMWVjLWFjNzQtODkzMWZiOWIzMDYyIiwiaWF0IjoxNjM2NDQyMTMwLCJleHAiOjMzMTk0MDQyMTMwfQ.llmnWVk8YAg7Q9YZW3rQKs_DAhi0hZaUAsQ7sQrSDWY";
 app.get("/", (req, res) => {
