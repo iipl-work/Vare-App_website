@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title>Vare APP Shop Product</title>
+    <title>VARE APP Shop Product</title>
     <meta name="description" content="" />
     <meta
       name="viewport"
@@ -23,7 +23,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <!-- custom css -->
-    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />   <link rel="stylesheet" href="/assets/css/custom-font.css" />
     <style>
        .product-gallery__nav-image--single {
         width: 70px;
@@ -315,7 +315,7 @@
                       class="
                         btn btn-small btn-bg-red btn-color-white btn-hover-2
                       "
-                      onclick="window.location.href='cart.html'"
+                      onclick="storeLink('play')"
                     >
                       Buy in playstore
                     </button>
@@ -325,7 +325,7 @@
                       class="
                         btn btn-small btn-bg-red btn-color-white btn-hover-2
                       "
-                      onclick="window.location.href='cart.html'"
+                      onclick="storeLink('app')"
                     >
                       Buy in App Store
                     </button>
@@ -752,7 +752,14 @@
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjkxOTcwMzIyMDk3NCIsInVzZXJJZCI6ImQzNmNlZDIwLTFkYjUtMTFlYy1hZmIwLWMzYzkzYzc4ZThmMyIsInZlbmRvcklkIjoiZTI3YWFmOTAtMjBlYS0xMWVjLWFjNzQtODkzMWZiOWIzMDYyIiwiaWF0IjoxNjM2MDk4MjkwLCJleHAiOjE2NTE2NTAyOTB9.AACiM1LpK0BWr1idSTn276mrbX78pDvutFxExxEGZ6I",
         },
       };
-
+     function storeLink(item) {
+        if (item == 'play') {
+          window.location.href = '';
+          return;
+        }
+        window.location.href = '';
+        return;
+      }
       $.ajax(settings).done(function (response) {
         console.log(response);
     

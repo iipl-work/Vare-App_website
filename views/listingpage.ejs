@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Vare APP Shop Now</title>
+    <title>VARE APP Shop Now</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%- include("partials/icon") %>
@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="/assets/css/main.css">
         <!-- custom css -->
     <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" href="/assets/css/custom-font.css" />
     <style>
         .product-inner .product-image a img {
           height: 300px;
@@ -32,6 +33,15 @@
         }
         .breadcrumb-area .page-title{
             font-size: 27px;
+        }
+        #category-title {
+            text-transform: capitalize;
+        }
+        .product-action button {
+            font-size: 11px;
+            min-width: 130px;
+    min-height: 30px;
+    line-height: 30px;
         }
       </style>
    
@@ -62,7 +72,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                                <h3 class="page-title"> Vare Shop</h3>
+                                <h3 class="page-title" id="category-title"></h3>
                             </div>
                         </div>
                     </div>
@@ -142,9 +152,37 @@
                                                             
                                                             
                                                             
-                                                            <a href="#"
-                                                                class="btn btn-small btn-bg-sand btn-color-dark">Buy in
-                                                                App</a>
+                                                            <div
+                                                            class="
+                                                              product-action
+                                                              d-flex
+                                                              flex-sm-row
+                                                              align-items-sm-center
+                                                          
+                                                              align-items-start
+                                                              mb--30
+                                                            "
+                                                          >
+                                                            <button
+                                                              type="button"
+                                                              class="
+                                                              btn btn-small btn-bg-sand btn-color-dark
+                                                              "
+                                                              onclick="storeLink('play')"
+                                                            >
+                                                              Buy in playstore
+                                                            </button>
+                                                            &nbsp;&nbsp;
+                                                            <button
+                                                              type="button"
+                                                              class="
+                                                              btn btn-small btn-bg-sand btn-color-dark
+                                                              "
+                                                              onclick="storeLink('app')"
+                                                            >
+                                                              Buy in App Store
+                                                            </button>
+                                                          </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -461,6 +499,14 @@
                   <script src="/assets/js/custom.js"></script>
 
                   <script>
+                      function storeLink(item) {
+        if (item == 'play') {
+          window.location.href = '';
+          return;
+        }
+        window.location.href = '';
+        return;
+      }
                       var current_page = window.location.href.split('?')[1].split('&&')[0].split('=')[1];
                         var records_per_page = 10;
                         // console.log('@{model.limit}',"LIMIT");
@@ -528,7 +574,8 @@
                                 
                                 
                         $(document).ready(function () {
-
+                            $('#category-title').html(window.location.search.split('&&')[1].split('/')[2]);
+                            
                             console.log(current_page,"CURRENT");
                             if (objJson.length == 0 || objJson.length == '0') {
                                 $('.pagination-wrap').hide();

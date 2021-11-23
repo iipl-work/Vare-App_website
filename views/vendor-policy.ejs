@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title>VARE APP Privacy Policy</title>
+    <title>VARE APP Terms & Conditions</title>
     <meta name="description" content="" />
     <meta
       name="viewport"
@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="/assets/css/vendor.css" />
 
     <!-- style css -->
-    <link rel="stylesheet" href="/assets/css/main.css" />   <link rel="stylesheet" href="/assets/css/custom-font.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/custom-font.css" />
   </head>
 
   <body>
@@ -60,7 +61,7 @@
                   flex-sm-row flex-column
                 "
               >
-                <h1 class="page-title">VARE Privacy Policy</h1>
+                <h1 class="page-title">VARE Vendor Policy</h1>
               </div>
             </div>
           </div>
@@ -117,14 +118,14 @@
     <script src="/assets/js/main.js"></script>
 
     <script>
-       if (window.location.pathname.split("/")[1] == "privacy") {
-        $.ajax({
-          url: `/privacy?json=1`,
-          success: function (result) {
-            $("#page-htmlview").html(result.data.data);
-          },
-        });
-      }
-    </script>
+      if (window.location.pathname.split("/")[1] == "vendor-policy") {
+       $.ajax({
+         url: `/vendor-policy?json=1`,
+         success: function (result) {
+           $("#page-htmlview").html(result.data.data);
+         },
+       });
+     }
+   </script>
   </body>
 </html>

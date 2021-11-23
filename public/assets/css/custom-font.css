@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/font/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: MontserratBold;
+  src: url(/assets/font/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url(/assets/font/Montserrat-SemiBold.ttf);
+}
+body ,h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    font-family: Montserrat !important;
+}
+
+.heading__primary--main {
+    font-family: MontserratSemiBold !important;
+}
