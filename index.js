@@ -340,7 +340,23 @@ app.get("/aboutus", async (req, res) => {
   }
   res.render("aboutus", { result: response.data.data, menu: menu });
 });
+app.get("/vendor-policy", async (req, res) => {
+  var menu = [];
+  menu = await getMenu();
+  var config = {
+    method: "get",
+    url: "http://k6u06d3vrf.execute-api.ap-south-1.amazonaws.com/dev/api/staticpages?pageName=vendor-policy",
+    headers: {},
+  };
 
+  var response = await axios(config);
+
+  if (req.query.json == 1 || req.query.json == "1") {
+    res.json({ data: response.data, menu: menu });
+    return;
+  }
+  res.render("vendor-policy", { result: response.data.data, menu: menu });
+});
 app.get("/404", (req, res) => {
   res.render("404", { foo: "FOO" });
 });
