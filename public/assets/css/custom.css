@@ -13,3 +13,10 @@
 .product-summary .product-title {
     text-transform: capitalize !important;
 } 
+@media (max-width:768px){ 
+    .mobile-menu .mean-bar .meanmenu-reveal span:before,
+    .mobile-menu .mean-bar .meanmenu-reveal span:after {
+    
+      background-color: #ffffff;
+    }
+}

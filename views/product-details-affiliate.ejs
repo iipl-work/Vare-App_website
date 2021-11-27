@@ -80,7 +80,7 @@
       <!-- Header End -->
 
       <!-- Breadcrumb area Start -->
-      <div class="breadcrumb-area bg-color ptb--90" data-bg-color="#f6f6f6">
+      <div class="breadcrumb-area bg-color ptb--40" data-bg-color="#f6f6f6">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -92,7 +92,7 @@
                   flex-sm-row flex-column
                 "
               >
-                <h1 class="page-title">Shop Product</h1>
+                <h3 class="page-title">Shop Product</h3>
               </div>
             </div>
           </div>
@@ -447,28 +447,7 @@
       <%- include("partials/footer") %>
       <!-- Footer End-->
 
-      <!-- Searchform Popup Start -->
-      <div class="searchform__popup" id="searchForm">
-        <a href="#" class="btn-close"
-          ><i class="flaticon flaticon-cross"></i
-        ></a>
-        <div class="searchform__body">
-          <p>Start typing and press Enter to search</p>
-          <form class="searchform">
-            <input
-              type="text"
-              name="popup-search"
-              id="popup-search"
-              class="searchform__input"
-              placeholder="Search Entire Store..."
-            />
-            <button type="submit" class="searchform__submit">
-              <i class="flaticon flaticon-magnifying-glass-icon"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-      <!-- Searchform Popup End -->
+     
 
       <!-- Global Overlay Start -->
       <div class="zakas-global-overlay"></div>
@@ -741,11 +720,13 @@
           $("#blog-htmlview").html(result.data.longdescription);
         },
       });
-
-
+      var data = {};
+      data.category = "<%= result.category %>";
+   
       var settings = {
         url: "https://k6u06d3vrf.execute-api.ap-south-1.amazonaws.com/dev/api/product/releated",
         method: "POST",
+        data : data,
         timeout: 0,
         headers: {
           "x-user-auth":
@@ -799,12 +780,6 @@
                                                                     ${element.brand}
                                                                 </span>
                                                             </div>
-                                                            
-                                                            
-                                                            
-                                                            <a href="#"
-                                                                class="btn btn-small btn-bg-sand btn-color-dark">Buy in
-                                                                App</a>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -37,12 +37,12 @@
         #category-title {
             text-transform: capitalize;
         }
-        .product-action button {
+        /* .product-action button {
             font-size: 11px;
             min-width: 130px;
     min-height: 30px;
     line-height: 30px;
-        }
+        } */
       </style>
    
     </head>
@@ -72,7 +72,10 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
-                                <h3 class="page-title" id="category-title"></h3>
+                                <% if(data.status) {%>
+                                    <h3 class="page-title" id="category-title">   <%= data.data[0].category[0] %> </h3>
+                                     <% }  %>   
+                               
                             </div>
                         </div>
                     </div>
@@ -160,7 +163,7 @@
                                                               align-items-sm-center
                                                           
                                                               align-items-start
-                                                              mb--30
+                                                              mb--30 d-none
                                                             "
                                                           >
                                                             <button
@@ -289,21 +292,7 @@
                     <%- include("partials/footer") %>
                         <!-- Footer End-->
 
-                        <!-- Searchform Popup Start -->
-                        <div class="searchform__popup" id="searchForm">
-                            <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-                            <div class="searchform__body">
-                                <p>Start typing and press Enter to search</p>
-                                <form class="searchform">
-                                    <input type="text" name="popup-search" id="popup-search" class="searchform__input"
-                                        placeholder="Search Entire Store...">
-                                    <button type="submit" class="searchform__submit"><i
-                                            class="flaticon flaticon-magnifying-glass-icon"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- Searchform Popup End -->
-
+                      
                         <!-- Global Overlay Start -->
                         <div class="zakas-global-overlay"></div>
                         <!-- Global Overlay End -->
@@ -574,7 +563,7 @@
                                 
                                 
                         $(document).ready(function () {
-                            $('#category-title').html(window.location.search.split('&&')[1].split('/')[2]);
+                            // $('#category-title').html(window.location.search.split('&&')[1].split('/')[2]);
                             
                             console.log(current_page,"CURRENT");
                             if (objJson.length == 0 || objJson.length == '0') {

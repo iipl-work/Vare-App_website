@@ -22,7 +22,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="/assets/css/main.css" />
 
-        <!-- custom css -->
+    <!-- custom css -->
     <link rel="stylesheet" href="/assets/css/custom.css" />
     <link rel="stylesheet" href="/assets/css/custom-font.css" />
   </head>
@@ -62,9 +62,19 @@
                     "autoplay": true
                 }'
           >
-          <% for(var i=0; i < result.data[0].childTile.length; i++) { %>
-            <div  class="  single-slide slider-height-2  bg-style   d-flex   align-items-center  "
-              style=" background-image: url('<%=  result.data[0].childTile[i].imgUrl %>');  " >
+            <% for(var i=0; i < result.data[0].childTile.length; i++) { %>
+            <div
+              class="
+                single-slide
+                slider-height-2
+                bg-style
+                d-flex
+                align-items-center
+              "
+              style="
+                background-image: url('<%=  result.data[0].childTile[i].imgUrl %>');
+              "
+            >
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-12">
@@ -81,14 +91,14 @@
                           data-animation="fadeInUp"
                           data-duration=".4s"
                           data-delay=".7s"
-                          ><%=  result.data[0].childTile[i].text %></span
+                          ><%= result.data[0].childTile[i].text %></span
                         >
                         <span
                           class="heading__primary--main"
                           data-animation="fadeInUp"
                           data-duration=".4s"
                           data-delay="1s"
-                          ><%=  result.data[0].childTile[i].subText %></span
+                          ><%= result.data[0].childTile[i].subText %></span
                         >
                       </h1>
                       <a
@@ -124,18 +134,17 @@
                     "
                   >
                     <figure class="banner-image">
-                      <img
-                        src="<%=  result.data[1].imgUrl %>"
-                        alt="Banner"
-                      />
+                      <img src="<%=  result.data[1].imgUrl %>" alt="Banner" />
                     </figure>
                     <div class="banner-info">
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            ><%=  result.data[1].text %></span
+                            ><%= result.data[1].text %></span
                           >
-                          <span class="heading__primary--main"><%=  result.data[1].subText %></span>
+                          <span class="heading__primary--main"
+                            ><%= result.data[1].subText %></span
+                          >
                         </h2>
                         <!-- <a
                           href="/shopnow"
@@ -145,7 +154,11 @@
                           data-delay="1.2s"
                           >Shop Now s<i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="<%=  result.data[1].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a
+                          href="<%=  result.data[1].hyperLink %>"
+                          class="btn btn-no-bg btn-color-white"
+                          >Shop Now <i class="fa fa-angle-double-right"></i
+                        ></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -163,18 +176,17 @@
                     "
                   >
                     <figure class="banner-image">
-                      <img
-                        src="<%=  result.data[2].imgUrl %>"
-                        alt="Banner"
-                      />
+                      <img src="<%=  result.data[2].imgUrl %>" alt="Banner" />
                     </figure>
                     <div class="banner-info">
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            ><%=  result.data[2].text %></span
+                            ><%= result.data[2].text %></span
                           >
-                          <span class="heading__primary--main"><%=  result.data[2].subText %></span>
+                          <span class="heading__primary--main"
+                            ><%= result.data[2].subText %></span
+                          >
                         </h2>
                         <!-- <a
                           href="/shopnow"
@@ -184,7 +196,11 @@
                           data-delay="1.2s"
                           >Shop Now <i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="<%=  result.data[2].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a
+                          href="<%=  result.data[2].hyperLink %>"
+                          class="btn btn-no-bg btn-color-white"
+                          >Shop Now <i class="fa fa-angle-double-right"></i
+                        ></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -219,19 +235,16 @@
                     "
                   >
                     <figure class="banner-image">
-                      <img
-                        src="<%=  result.data[4].imgUrl %>"
-                        alt="Banner"
-                      />
+                      <img src="<%=  result.data[4].imgUrl %>" alt="Banner" />
                     </figure>
                     <div class="banner-info">
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            ><%=  result.data[4].text %></span
+                            ><%= result.data[4].text %></span
                           >
                           <span class="heading__primary--main"
-                            ><%=  result.data[4].subText %></span
+                            ><%= result.data[4].subText %></span
                           >
                         </h2>
                         <!-- <a
@@ -242,7 +255,11 @@
                           data-delay="1.2s"
                           >Shop Now <i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="<%=  result.data[4].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a
+                          href="<%=  result.data[4].hyperLink %>"
+                          class="btn btn-no-bg btn-color-white"
+                          >Shop Now <i class="fa fa-angle-double-right"></i
+                        ></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -270,9 +287,11 @@
                       <div class="banner-info--inner text-center">
                         <h2 class="heading__primary color--white mb--20">
                           <span class="heading__primary--sub"
-                            ><%=  result.data[5].text %></span
+                            ><%= result.data[5].text %></span
                           >
-                          <span class="heading__primary--main"><%=  result.data[5].subText %></span>
+                          <span class="heading__primary--main"
+                            ><%= result.data[5].subText %></span
+                          >
                         </h2>
                         <!-- <a
                           href="/shopnow"
@@ -282,7 +301,11 @@
                           data-delay="1.2s"
                           >Shop Now <i class="fa fa-angle-double-right"></i
                         ></a> -->
-                        <a href="<%=  result.data[5].hyperLink %>" class="btn btn-no-bg btn-color-white">Shop Now <i class="fa fa-angle-double-right"></i></a>
+                        <a
+                          href="<%=  result.data[5].hyperLink %>"
+                          class="btn btn-no-bg btn-color-white"
+                          >Shop Now <i class="fa fa-angle-double-right"></i
+                        ></a>
                       </div>
                     </div>
                     <a href="/shopnow" class="banner-link"></a>
@@ -316,7 +339,7 @@
               class="searchform__input"
               placeholder="Search Entire Store..."
             />
-            <button type="submit" class="searchform__submit">
+            <button type="button" class="searchform__submit">
               <i class="flaticon flaticon-magnifying-glass-icon"></i>
             </button>
           </form>
@@ -341,6 +364,18 @@
       $(document).ready(function () {
         $("#header").load("header.html");
         $("#footer").load("footer.html");
+      });
+      $("#popup-search").keyup(function (event) {
+        if (event.keyCode === 13) {
+          // console.log("FFFFFFFFFF");
+
+          $(".searchform__submit").click();
+        }
+      });
+      $(".searchform__submit").click(function (event) {
+        window.location.href = `/shopnow?pageNo=1&&search=${$(
+          "#popup-search"
+        ).val()}`;
       });
     </script>
   </body>

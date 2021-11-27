@@ -155,7 +155,7 @@ img {
 }
 
 a:hover {
-  color: #c2080f;
+  color: #ec008c;
   text-decoration: none;
 }
 
@@ -549,8 +549,9 @@ textarea,
 }
 .footer-menu li:not(:last-child) {
   border-right: 2px solid #c9c9c9;
-  padding-right: 18px;
-  margin-right: 18px;
+  padding-right: 10px;
+  margin-right: 10px;
+  font-size: 12px;
 }
 @media (max-width: 47.94em) {
   .footer-menu li:not(:last-child) {
@@ -1232,7 +1233,7 @@ textarea,
   color: #111111;
 }
 .single-post-details .entry-content a:hover {
-  color: #c2080f;
+  color: #ec008c;
   text-decoration: underline;
 }
 .single-post-details .entry-content h1,
@@ -1299,10 +1300,10 @@ textarea,
     background-color: #4696f0;
   }
   .single-post .post-share .social .social__link.google-plus {
-    background-color: #c2080f;
+    background-color: #ec008c;
   }
   .single-post .post-share .social .social__link.pinterest {
-    background-color: #c2080f;
+    background-color: #ec008c;
   }
 }
 
@@ -1456,7 +1457,7 @@ textarea,
 /*-- 23.00 - Global Button --*/
 .btn {
   background-color: #ffffff;
-  color: #c2080f;
+  color: #ec008c;
   font-size: 16px;
   min-width: 184px;
   min-height: 55px;
@@ -3401,7 +3402,7 @@ textarea,
   color: #4cbb6c;
 }
 .form__output.error {
-  color: #c2080f;
+  color: #ec008c;
 }
 
 .form__fieldset {
@@ -4041,7 +4042,7 @@ textarea,
 
 @media (min-width: 62em) {
   .main-navigation .mainmenu__item.active > a {
-    color: #c2080f;
+    color: #ffffff;
   }
 }
 
@@ -4109,13 +4110,13 @@ textarea,
     -ms-transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
     -o-transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
     transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
-    background-color: #c2080f;
+    background-color: #ec008c;
   }
 }
 
 @media (min-width: 62em) {
   .main-navigation .mainmenu__item.menu-item-has-children > ul li a:hover {
-    color: #c2080f;
+    color: #ec008c;
   }
 }
 
@@ -4266,7 +4267,7 @@ textarea,
     > ul.megamenu
     > li
     a.megamenu-title:hover {
-    color: #c2080f;
+    color: #ec008c;
   }
 }
 
@@ -4279,7 +4280,7 @@ textarea,
     .mm-text:after {
     position: absolute;
     content: "";
-    background-color: #c2080f;
+    background-color: #ec008c;
     width: 50%;
     height: 2px;
     bottom: -10px;
@@ -4489,7 +4490,7 @@ textarea,
   margin-top: 0;
 }
 .mobile-menu .mean-bar .mean-nav > ul {
-  background-color: #c2080f;
+  background-color: #ec008c;
   border: 1px solid #eeeeee;
   border-top: 0;
   overflow-x: hidden;
@@ -4676,11 +4677,11 @@ textarea,
 }
 
 .offcanvas-navigation .offcanvas-menu li:hover > a {
-  color: #c2080f !important;
+  color: #ec008c !important;
 }
 
 .offcanvas-navigation .offcanvas-menu li:hover > .menu-expand {
-  color: #c2080f !important;
+  color: #ec008c !important;
 }
 
 /*****************************
@@ -5145,17 +5146,17 @@ textarea,
 .variation-form
   .product-color-variations
   .product-color-variation-btn.red:hover {
-  border-color: #c2080f;
+  border-color: #ec008c;
 }
 .variation-form
   .product-color-variations
   .product-color-variation-btn.red:after {
-  background-color: #c2080f;
+  background-color: #ec008c;
 }
 .variation-form
   .product-color-variations
   .product-color-variation-btn.red.selected {
-  border-color: #c2080f;
+  border-color: #ec008c;
 }
 .variation-form
   .product-color-variations
@@ -5551,7 +5552,7 @@ textarea,
   }
 }
 .social__link i {
-  background-color: #c2080f;
+  background-color: #ec008c;
   width: 38px;
   height: 24px;
   font-size: 14px;
@@ -5562,10 +5563,10 @@ textarea,
   background-color: #1561b7;
 }
 .social__link.google-plus i {
-  background-color: #c2080f;
+  background-color: #ec008c;
 }
 .social__link.pinterest i {
-  background-color: #c2080f;
+  background-color: #ec008c;
 }
 .social__link.twitter i {
   background-color: #4696f0;
@@ -6765,7 +6766,7 @@ textarea,
 }
 
 .mailchimp-alerts .mailchimp-error {
-  color: #c2080f;
+  color: #ec008c;
 }
 
 .mailchimp-alerts .mailchimp-success {
@@ -7031,7 +7032,7 @@ textarea,
 .zakas-preloader .zakas-child {
   width: 20px;
   height: 20px;
-  background-color: #c2080f;
+  background-color: #ec008c;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: zakas-bouncedelay 1.4s ease-in-out 0s infinite both;
@@ -24002,7 +24003,7 @@ button,
 .method-box-2 i,
 .message-box a:hover,
 .error h1 {
-  color: #c2080f;
+  color: #ec008c;
 }
 
 .header-toolbar__btn.mini-cart-btn .mini-cart-count,
@@ -24023,14 +24024,14 @@ button,
 .tab-style-1 .nav-link.active,
 .user-dashboard-tab__head .nav-link.active,
 .user-dashboard-tab__head .nav-link:hover {
-  background-color: #c2080f;
+  background-color: #ec008c;
 }
 
 .nav-hover-2 .slick-btn:hover,
 .nav-hover-2 .accordion-slider__btn:hover,
 .nav-hover-2 .accordion-click-slider__btn:hover,
 .comment .reply:hover {
-  border-color: #c2080f;
+  border-color: #ec008c;
 }
 
 .product-title > a,
@@ -24180,7 +24181,7 @@ a,
 }
 
 .color--primary {
-  color: #c2080f;
+  color: #ec008c;
 }
 
 .color--light {
@@ -24236,5 +24237,5 @@ a,
 }
 
 .primary-bg {
-  background-color: #c2080f;
+  background-color: #ec008c;
 }
