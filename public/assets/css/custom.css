@@ -13,7 +13,16 @@
 .product-summary .product-title {
     text-transform: capitalize !important;
 } 
+.footer-menu li {
+    font-size: 12px !important;
+}
+.searchform__input {
+    font-size: 22px;
+}
 @media (max-width:768px){ 
+    .searchform__input {
+        font-size: 20px;
+    }
     .mobile-menu .mean-bar .meanmenu-reveal span:before,
     .mobile-menu .mean-bar .meanmenu-reveal span:after {
     

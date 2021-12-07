@@ -13,11 +13,8 @@
     text-transform: capitalize;
   }
   .header-inner {
-    background: #7a2d6d;
-    background: -webkit-linear-gradient(to top, #7a2d6d 0%, #570c3a 98%);
-    background: -moz-linear-gradient(to top, #7a2d6d 0%, #570c3a 98%);
-    background: linear-gradient(to top, #7a2d6d 0%, #570c3a 98%);
-    color: #ffffff;
+    background-color: #843b62;
+   color: #ffffff;
   }
   .flaticon.flaticon-search {
     color: #ffffff;
@@ -41,7 +38,7 @@
   @media (max-width: 768px) {
     .flaticon.flaticon-search {
       position: absolute;
-      bottom: -20px;
+      bottom: -17px;
       color: #ffffff;
       right: -2px;
       font-size: 20px;
@@ -152,8 +149,9 @@
   <div class="searchform__popup" id="searchForm">
     <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
     <div class="searchform__body">
-      <p>Start typing and press Enter to search</p>
-      <input
+      <p>Search by product name</p>
+      <div class="searchform">
+        <input
         type="text"
         name="popup-search"
         id="popup-search"
@@ -163,6 +161,8 @@
       <button type="button" class="searchform__submit">
         <i class="flaticon flaticon-magnifying-glass-icon"></i>
       </button>
+      </div>
+   
     </div>
   </div>
   <!-- Searchform Popup End -->
