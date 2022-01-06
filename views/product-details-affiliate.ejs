@@ -23,35 +23,41 @@
     <!-- style css -->
     <link rel="stylesheet" href="/assets/css/main.css" />
     <!-- custom css -->
-    <link rel="stylesheet" href="/assets/css/custom.css" />   <link rel="stylesheet" href="/assets/css/custom-font.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+    <link rel="stylesheet" href="/assets/css/custom-font.css" />
     <style>
-       .product-gallery__nav-image--single {
+      .product-gallery__nav-image--single {
         width: 70px;
-        
       }
-      .product-gallery__nav-image--single img{
+      .product-gallery__nav-image--single img {
         width: 70px;
         border: 1px solid #c2080f;
       }
       .product-gallery__image img {
-          width: auto !important;
-          height: 500px !important;
+        width: auto !important;
+        height: 500px !important;
       }
       .product-inner .product-image a img {
-            height: 300px;
+        height: 300px;
         margin: 0 0 18px;
         object-fit: scale-down;
         transform: scale(1);
         transition-duration: 0.4s;
-          }
-      @media (max-width:768px){
-        .product-gallery__image img {
-          width: 100%;
-          height: auto !important;
+      }
+      @media (max-width: 768px) {
+        .product-gallery__image {
+          height: 500px !important;
         }
+        .product-gallery__image img {
+          /* width: 100%; */
+          height: 500px !important;
+          margin: auto;
+        }
+        .slick-list.draggable figure.product-gallery__nav-image--single {
+          width: auto !important;
+        } 
       }
     </style>
-       
   </head>
 
   <body>
@@ -121,9 +127,8 @@
                                             }'
                         >
                           <% for(var i=0; i < result.image_url.length; i++) { %>
-                          <figure class="product-gallery__image zoom">
+                          <figure class="product-gallery__image ">
                             <img
-                             
                               src="<%= result.image_url[i] %>"
                               alt="Productss"
                             />
@@ -186,17 +191,6 @@
                           />
                         </figure>
                         <% } %>
-                        <!-- <figure class="product-gallery__nav-image--single">
-                          <img src="/assets/img/products/fashion-model-dressed-blue-fur-and-black-cap-poses-N9SF6WL.jpg"
-                            alt="Products" />
-                        </figure>
-                        <figure class="product-gallery__nav-image--single">
-                          <img src="/assets/img/products/fashion-model-woman-colorful-summer-outfit-makeup-PQW4D24.jpg"
-                            alt="Products" />
-                        </figure>
-                        <figure class="product-gallery__nav-image--single">
-                          <img src="/assets/img/products/glamour-fashion-model-K4GT4V5.JPG" alt="Products" />
-                        </figure> -->
                       </div>
                     </div>
                   </div>
@@ -304,9 +298,7 @@
                       product-action
                       d-flex
                       flex-sm-row
-                      align-items-sm-center
-                  
-                      align-items-start
+                      align-items-sm-center align-items-start
                       mb--30
                     "
                   >
@@ -430,12 +422,10 @@
               <div class="col-12">
                 <div class="row mb--50">
                   <div class="col-12 text-center">
-                    <h2 class="heading__secondary">Related Post</h2>
+                    <h2 class="heading__secondary">Related Products</h2>
                   </div>
                 </div>
-                <div class="row " id="related-prods">
-   
-                </div>
+                <div class="row" id="related-prods"></div>
               </div>
             </div>
           </div>
@@ -446,8 +436,6 @@
       <!-- Footer Start-->
       <%- include("partials/footer") %>
       <!-- Footer End-->
-
-     
 
       <!-- Global Overlay Start -->
       <div class="zakas-global-overlay"></div>
@@ -714,6 +702,16 @@
     <!-- Custom JS -->
     <script src="/assets/js/custom.js"></script>
     <script>
+      // $(window).on("resize", function () {
+      //   var screen = $(window);
+      //   console.log(screen.width);
+      //   if (screen.width < 768) {
+      //     $(".product-gallery__image").removeClass("zoom");
+      //   } else {
+      //     $(".product-gallery__image").addClass("zoom");
+      //   }
+      //   // $(".product-gallery__image").toggleClass("zoom", $(window).width() < 768);
+      // });
       $.ajax({
         url: `${window.location.href}?json=1`,
         success: function (result) {
@@ -722,29 +720,30 @@
       });
       var data = {};
       data.category = "<%= result.category %>";
-   
+
       var settings = {
         url: "https://k6u06d3vrf.execute-api.ap-south-1.amazonaws.com/dev/api/product/releated",
         method: "POST",
-        data : data,
+        data: data,
         timeout: 0,
         headers: {
           "x-user-auth":
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6IjkxOTcwMzIyMDk3NCIsInVzZXJJZCI6ImQzNmNlZDIwLTFkYjUtMTFlYy1hZmIwLWMzYzkzYzc4ZThmMyIsInZlbmRvcklkIjoiZTI3YWFmOTAtMjBlYS0xMWVjLWFjNzQtODkzMWZiOWIzMDYyIiwiaWF0IjoxNjM2MDk4MjkwLCJleHAiOjE2NTE2NTAyOTB9.AACiM1LpK0BWr1idSTn276mrbX78pDvutFxExxEGZ6I",
         },
       };
-     function storeLink(item) {
-        if (item == 'play') {
-          window.location.href = '';
+      function storeLink(item) {
+        if (item == "play") {
+          window.location.href = "";
           return;
         }
-        window.location.href = '';
+        window.location.href = "";
         return;
       }
       $.ajax(settings).done(function (response) {
         console.log(response);
-    
+
         if (response.status) {
+          $("#related-prods").html("");
           for (let i = 0; i < response.data.length; i++) {
             const element = response.data[i];
             $("#related-prods").append(`
@@ -754,7 +753,7 @@
                                                         <figure class="product-image">
                                                             <a href="/shopproduct/${element.productId}">
 
-                                                                <img src="${element.image_url} %>" alt="Products">
+                                                                <img src="${element.image_url[0]} %>" alt="Products">
                                                             </a>
                                                          
                                                             <% if (i % 2 == 0) { %>
@@ -785,9 +784,8 @@
                                                 </div>
                                             </div>
         `);
-
           }
-          $('.hide-temp').show();
+          $(".hide-temp").show();
         }
       });
     </script>
