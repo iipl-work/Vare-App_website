@@ -413,6 +413,7 @@ app.get("/singlepostimage/:id", async (req, res) => {
         // console.log("hi");
         if (err) throw err;
         // console.log(result);
+        result.tags = result.tags.split(",")
         db.close();
         if (req.query.json == 1 || req.query.json == "1") {
           res.json({ result: result, menu: menu });
