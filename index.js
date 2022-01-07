@@ -259,6 +259,7 @@ app.get("/shopproduct/:id", async (req, res) => {
       .findOne({ productId: req.params.id }, function (err, result) {
         if (err) throw err;
         console.log("DETAIL", result);
+        result.longdescription = result.long_desc;
         db.close();
         if (req.query.json == 1 || req.query.json == "1") {
           res.json({ data: result, menu: menu });
@@ -413,7 +414,7 @@ app.get("/singlepostimage/:id", async (req, res) => {
         // console.log("hi");
         if (err) throw err;
         // console.log(result);
-        result.tags = result.tags.split(",")
+        result.tags = result.tags.split(",");
         db.close();
         if (req.query.json == 1 || req.query.json == "1") {
           res.json({ result: result, menu: menu });
